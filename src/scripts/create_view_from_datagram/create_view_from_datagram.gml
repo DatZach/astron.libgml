@@ -3,6 +3,10 @@
 /// @context pObjectRepository
 /// @param dg buffer
 /// @param classPostfix string
+/// @returns pDistributedObject
+
+// TODO or_create_view_from_datagram
+assert_ancestor(pObjectRepository);
 
 var dg = argument[0];
 var classPostfix = argument_count > 1 ? argument[1] : "";
@@ -15,8 +19,11 @@ var parentId = dg_read(dg, dg_type_doid);
 var zoneId = dg_read(dg, dg_type_zone);
 var dclassId = dg_read(dg, dg_type_u16);
 
-var dclass = dc_class_find_id(global.net_dcMod, dclassId); // TODO Postfix
-var distObj = do_create(dclass, dOid, parentId, zoneId);
-distributedObjects[? doId] = distObj;
+var dclass = dc_class_find_id(global.net_dcMod, dclassId);
+if (classPostfix != "")
+	dclass = dc_class_find_name(global.net_dcMod, dclass[? "name"] + classPostfix);
+
+var distObj = do_create(dclass, doId, parentId, zoneId);
+self.distributedObjects[? doId] = distObj;
 
 return distObj;

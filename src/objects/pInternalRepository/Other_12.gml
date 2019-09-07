@@ -42,22 +42,27 @@ switch(messageType) {
 	}
 	
 	case STATESERVER_OBJECT_ENTER_LOCATION_WITH_REQUIRED: {
-		// TODO Implement
 		trace("STATESERVER_OBJECT_ENTER_LOCATION_WITH_REQUIRED");
+		create_view_from_datagram(dg, "AE");
 		break;
 	}
 	
 	case STATESERVER_OBJECT_ENTER_AI_WITH_REQUIRED: {
-		// TODO Implement
 		trace("STATESERVER_OBJECT_ENTER_AI_WITH_REQUIRED");
+		create_view_from_datagram(dg, "AI");
 		break;
 	}
 
 	case DBSERVER_CREATE_OBJECT_RESP: {
 		var context = dg_read(dg, dg_type_u32);
 		var doId = dg_read(dg, dg_type_doid);
-		// TODO Implement
+		
 		trace("DBSERVER_CREATE_OBJECT_RESP ", sender, " ", recipients, " ", context, " ", doId);
+		
+		var key = [DBSERVER_CREATE_OBJECT_RESP, context];
+		var callback = self.callbacks[? key];
+		script_execute_va(callback[0], callback[1]);
+		ds_map_delete(self.callbacks, key);
 		break;
 	}
 	

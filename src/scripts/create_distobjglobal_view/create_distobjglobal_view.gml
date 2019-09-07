@@ -4,8 +4,11 @@
 /// @param className string Name of dclass
 /// @param doId real
 /// @param setAi bool
+/// @return pDistributedObject
 
-// TODO Rename create_dog_view
+// TODO Rename or_create_dog_view
+
+assert_ancestor(pObjectRepository);
 
 var className = argument0;
 var doId = argument1;
@@ -15,7 +18,7 @@ var class = dc_class_find_name(global.net_dcMod, className);
 assert(class != noone, "Unknown class " + className);
 
 var distObj = do_create(class, doId, 0, 0);
-distributedObjects[? doId] = distObj;
+self.distributedObjects[? doId] = distObj;
 
 if (setAi)
 	send_control_add_channel(doId);
