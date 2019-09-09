@@ -16,7 +16,6 @@ var zoneId = argument3;
 
 assert(object_is_ancestor(self.object_index, pObjectRepository), "Self must be pObjectRepository");
 
-// TODO Validate that object-index inherits pDistributedObject
 var distObj = instance_create_layer(0, 0, class[? "object-layer"], class[? "object-index"]);
 distObj.repo = self;
 distObj.dclass = class;

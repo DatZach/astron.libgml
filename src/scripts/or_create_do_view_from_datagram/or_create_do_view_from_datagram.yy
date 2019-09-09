@@ -1,8 +1,8 @@
 {
-    "id": "071c4e85-c1cd-4064-9f41-7b3dc88b63d8",
+    "id": "bf9c95a1-8d6d-437b-831b-82ba1922642e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "create_distobjglobal_view",
+    "name": "or_create_do_view_from_datagram",
     "IsCompatibility": false,
     "IsDnD": false
 }

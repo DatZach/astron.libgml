@@ -5,8 +5,7 @@
 
 var doId = argument0;
 
-// aiChannel = sender
 var dg = dg_create();
-	dg_write_server_header(dg, STATESERVER_OBJECT_SET_AI, aiChannel, doId);
-	dg_write(dg, dg_type_channel, aiChannel);
-dg_send(dg);
+	dg_write_server_header(dg, STATESERVER_OBJECT_SET_AI, self.aiChannel, doId);
+	dg_write(dg, dg_type_channel, self.aiChannel);
+return dg_send(dg, self.socket);

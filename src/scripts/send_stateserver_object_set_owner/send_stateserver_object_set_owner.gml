@@ -10,4 +10,4 @@ var owner = argument1;
 var dg = dg_create();
 	dg_write_server_header(dg, STATESERVER_OBJECT_SET_OWNER, aiChannel, doId);
 	dg_write(dg, dg_type_channel, owner);
-dg_send(dg);
+return dg_send(dg, self.socket);

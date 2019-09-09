@@ -43,13 +43,13 @@ switch(messageType) {
 	
 	case STATESERVER_OBJECT_ENTER_LOCATION_WITH_REQUIRED: {
 		trace("STATESERVER_OBJECT_ENTER_LOCATION_WITH_REQUIRED");
-		create_view_from_datagram(dg, "AE");
+		or_create_do_view_from_datagram(dg, "AE");
 		break;
 	}
 	
 	case STATESERVER_OBJECT_ENTER_AI_WITH_REQUIRED: {
 		trace("STATESERVER_OBJECT_ENTER_AI_WITH_REQUIRED");
-		create_view_from_datagram(dg, "AI");
+		or_create_do_view_from_datagram(dg, "AI");
 		break;
 	}
 

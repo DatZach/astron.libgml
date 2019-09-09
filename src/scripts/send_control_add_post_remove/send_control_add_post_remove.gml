@@ -1,6 +1,7 @@
 /// @desc send_control_add_post_remove(sender, datagram);
 /// Queues a datagram to be sent by a `sender` when they're removed from
 /// the visibility graph. This will free the datagram resource passed in.
+/// @context pObjectRepository
 /// @param sender real Channel ID
 /// @param datagram Datagram Datagram to forward
 
@@ -17,5 +18,7 @@ var dg = dg_create();
 	dg_write_control_header(dg, CONTROL_ADD_POST_REMOVE);
 	dg_write(dg, dg_type_channel, sender);
 	dg_write(dg, dg_type_blob, payload);
-dg_send(dg);
+var result = dg_send(dg, self.socket);
 buffer_delete(payload);
+
+return result;

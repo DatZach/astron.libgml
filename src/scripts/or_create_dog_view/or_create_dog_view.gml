@@ -1,12 +1,10 @@
-/// @desc create_distobjglobal_view(className, doId, setAi);
-/// Creates a new DO given a DOID
-/// @context pObjectRepositor
+/// @desc or_create_dog_view(className, doId, setAi);
+/// Creates a new view to a DO of a specified DOID
+/// @context pObjectRepository
 /// @param className string Name of dclass
 /// @param doId real
 /// @param setAi bool
 /// @return pDistributedObject
-
-// TODO Rename or_create_dog_view
 
 assert_ancestor(pObjectRepository);
 

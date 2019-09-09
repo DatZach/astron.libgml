@@ -9,10 +9,9 @@ var doId = argument0;
 var parentId = argument1;
 var zoneId = argument2;
 
-// aiChannel = sender
 var dg = dg_create();
-	dg_write_server_header(dg, DBSS_OBJECT_ACTIVATE_WITH_DEFAULTS, aiChannel, doId);
+	dg_write_server_header(dg, DBSS_OBJECT_ACTIVATE_WITH_DEFAULTS, self.aiChannel, doId);
 	dg_write(dg, dg_type_doid, doId);
 	dg_write(dg, dg_type_channel, parentId);
 	dg_write(dg, dg_type_channel, zoneId);
-dg_send(dg);
+return dg_send(dg, self.socket);

@@ -9,8 +9,6 @@ var sender = argument0;
 var fieldId = argument1;
 var datagram = argument2;
 
-assert_ancestor(pDistributedObject);
-
 var method = dc_class_field_find_id(self.dclass, fieldId);
 var fields = method[? "fields"];
 

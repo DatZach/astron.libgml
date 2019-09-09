@@ -74,7 +74,7 @@
             "Key": "071c4e85-c1cd-4064-9f41-7b3dc88b63d8",
             "Value": {
                 "id": "9d51e001-66eb-497b-a9c5-eb15ee2e3e7b",
-                "resourcePath": "scripts\\create_distobjglobal_view\\create_distobjglobal_view.yy",
+                "resourcePath": "scripts\\or_create_dog_view\\or_create_dog_view.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -84,14 +84,6 @@
                 "id": "427ca0c4-a0e4-46c7-81b6-cf74e17ba2ab",
                 "resourcePath": "views\\07418cb8-0d42-4906-8967-61c580766a9f.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "0b28ba0f-7978-4268-ad53-a2cbad880aff",
-            "Value": {
-                "id": "b4efb663-c864-4c64-abee-7f8dbeece10f",
-                "resourcePath": "objects\\pDistributedObject\\pDistributedObject.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -450,7 +442,7 @@
             "Key": "6d57f201-ced5-4b04-82fe-42c8406b7a9c",
             "Value": {
                 "id": "41bcf491-1866-4edd-aa14-7713c8117bcc",
-                "resourcePath": "scripts\\repo_initialize\\repo_initialize.yy",
+                "resourcePath": "scripts\\or_initialize\\or_initialize.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -746,7 +738,7 @@
             "Key": "bf9c95a1-8d6d-437b-831b-82ba1922642e",
             "Value": {
                 "id": "4e80f4b6-5bd6-4d18-8ffd-97895ce5a96d",
-                "resourcePath": "scripts\\create_view_from_datagram\\create_view_from_datagram.yy",
+                "resourcePath": "scripts\\or_create_do_view_from_datagram\\or_create_do_view_from_datagram.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1055,6 +1047,7 @@
         "78f864f9-8ac9-421b-a55c-4c8a3a10024f",
         "b85b3c4c-8509-4bc1-a98c-1373c0bb9e27",
         "9910a42a-fc4f-429f-8e76-93dcece63525",
+        "6d57f201-ced5-4b04-82fe-42c8406b7a9c",
         "071c4e85-c1cd-4064-9f41-7b3dc88b63d8",
         "bf9c95a1-8d6d-437b-831b-82ba1922642e",
         "249ca60f-20ad-4acb-b31d-e70ff793f0e7",
@@ -1088,7 +1081,6 @@
         "c04dac75-4ff5-4225-9305-9cb98a1f84b5",
         "41fc8708-6304-4162-a833-f8316f9efaae",
         "95b1ee3f-24e8-470c-af46-b51b9874bc00",
-        "6d57f201-ced5-4b04-82fe-42c8406b7a9c",
         "027014bd-951c-4679-890a-4008d5961f23",
         "dba326fa-a87c-4b5b-9bc3-743bfee7e9d9",
         "e874c911-1292-45a5-a43b-90342497a682",

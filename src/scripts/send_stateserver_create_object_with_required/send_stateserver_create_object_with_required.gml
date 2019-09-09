@@ -13,10 +13,10 @@ var zoneId = argument3;
 
 // aiChannel = sender
 var dg = dg_create();
-	dg_write_server_header(dg, STATESERVER_CREATE_OBJECT_WITH_REQUIRED, aiChannel, stateServer);
+	dg_write_server_header(dg, STATESERVER_CREATE_OBJECT_WITH_REQUIRED, self.aiChannel, self.stateServer);
 	dg_write(dg, dg_type_doid, doId);
 	dg_write(dg, dg_type_doid, parentId);
 	dg_write(dg, dg_type_doid, zoneId);
 	dg_write(dg, dg_type_u16, dclassId);
 	// TODO Add REQUIRED fields
-dg_send(dg);
+return dg_send(dg, self.socket);

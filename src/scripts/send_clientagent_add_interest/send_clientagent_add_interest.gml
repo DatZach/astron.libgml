@@ -12,8 +12,8 @@ var parentId = argument2;
 var zoneId = argument3;
 
 var dg = dg_create();
-	dg_write_server_header(dg, CLIENTAGENT_ADD_INTEREST, aiChannel, clientChannel);
+	dg_write_server_header(dg, CLIENTAGENT_ADD_INTEREST, self.aiChannel, clientChannel);
 	dg_write(dg, dg_type_u16, interestId);
 	dg_write(dg, dg_type_doid, parentId);
 	dg_write(dg, dg_type_zone, zoneId);
-dg_send(dg);
+return dg_send(dg, self.socket);

@@ -8,6 +8,6 @@ var doId = argument0;
 var clientChannel = argument1;
 
 var dg = dg_create();
-	dg_write_server_header(dg, CLIENTAGENT_ADD_SESSION_OBJECT, aiChannel, clientChannel);
+	dg_write_server_header(dg, CLIENTAGENT_ADD_SESSION_OBJECT, self.aiChannel, clientChannel);
 	dg_write(dg, dg_type_doid, doId);
-dg_send(dg);
+return dg_send(dg, self.socket);

@@ -6,9 +6,7 @@
 
 var fieldName = argument[0];
 
-assert_ancestor(pDistributedObject);
-
-var field = dc_class_field_find_name(dclass, fieldName);
+var field = dc_class_field_find_name(self.dclass, fieldName);
 assert(field[? "type"] == DcType.Method, "Not a method: " + fieldName);
 
 var argCount = argument_count - 1;
@@ -20,9 +18,9 @@ var dg = dg_create();
 if (object_is_ancestor(self.repo.object_index, pClientRepository))
 	dg_write(dg, dg_type_u16, CLIENT_OBJECT_SET_FIELD);
 else
-	dg_write_server_header(dg, STATESERVER_OBJECT_SET_FIELD, doId, doId);
+	dg_write_server_header(dg, STATESERVER_OBJECT_SET_FIELD, self.doId, self.doId);
 
-dg_write(dg, dg_type_doid, doId);
+dg_write(dg, dg_type_doid, self.doId);
 dg_write(dg, dg_type_u16, field[? "id"]);
 
 for (var i = 0; i < fieldArgCount; ++i) {
@@ -32,5 +30,4 @@ for (var i = 0; i < fieldArgCount; ++i) {
 	dc_field_datagram_write(dg, arg, value);
 }
 
-with(self.repo)
-	dg_send(dg);
+return dg_send(dg, self.repo.socket);

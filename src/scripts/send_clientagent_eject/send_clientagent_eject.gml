@@ -15,4 +15,4 @@ var dg = dg_create();
 	dg_write_server_header(dg, CLIENTAGENT_EJECT, sender, clientChannel);
 	dg_write(dg, dg_type_u16, disconnectCode);
 	dg_write(dg, dg_type_string, reason);
-dg_send(dg);
+return dg_send(dg, self.socket);

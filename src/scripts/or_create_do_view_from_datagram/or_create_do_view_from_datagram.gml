@@ -1,18 +1,17 @@
-/// @func create_view_from_datagram(dg, [classPostfix]);
+/// @func or_create_do_view_from_datagram(dg, [classPostfix]);
 /// Creates a view encoded in a datagram
 /// @context pObjectRepository
 /// @param dg buffer
 /// @param classPostfix string
 /// @returns pDistributedObject
 
-// TODO or_create_view_from_datagram
 assert_ancestor(pObjectRepository);
 
 var dg = argument[0];
 var classPostfix = argument_count > 1 ? argument[1] : "";
 
 var doId = dg_read(dg, dg_type_doid);
-if (ds_map_exists(distributedObjects, doId))
+if (ds_map_exists(self.distributedObjects, doId))
 	return noone;
 
 var parentId = dg_read(dg, dg_type_doid);

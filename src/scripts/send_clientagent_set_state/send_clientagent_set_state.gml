@@ -14,4 +14,4 @@ assert(object_is_ancestor(self.object_index, pInternalRepository), "Self must be
 var dg = dg_create();
 	dg_write_server_header(dg, CLIENTAGENT_SET_STATE, sender, clientAgent);
 	dg_write(dg, dg_type_u16, state);
-dg_send(dg);
+return dg_send(dg, self.socket);

@@ -1,8 +1,8 @@
 {
-    "id": "bf9c95a1-8d6d-437b-831b-82ba1922642e",
+    "id": "071c4e85-c1cd-4064-9f41-7b3dc88b63d8",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "create_view_from_datagram",
+    "name": "or_create_dog_view",
     "IsCompatibility": false,
     "IsDnD": false
 }

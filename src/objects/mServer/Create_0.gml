@@ -1,1 +1,1 @@
-repo_initialize("127.0.0.1", 6660);
+or_initialize("127.0.0.1", 6660);

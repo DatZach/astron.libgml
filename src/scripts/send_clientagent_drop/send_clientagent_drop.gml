@@ -9,4 +9,4 @@ var sender = argument1;
 
 var dg = dg_create();
 	dg_write_server_header(dg, CLIENTAGENT_DROP, sender, clientChannel);
-dg_send(dg);
+return dg_send(dg, self.socket);
