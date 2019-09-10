@@ -1,15 +1,32 @@
-/// @desc dc_class_create(name);
-/// Creates a new dc_class
+/// @func dc_class_create(dcFile, name);
+/// Creates a new DcClass
+/// @param dcFile DcFile
 /// @param name string
+/// @returns DcClass
 
-// TODO macros for field keys
+enum DcClass {
+	Constructor = DcStruct.sizeof,	// DcField
+	BaseFields,						// list<DcField>
+	Parents,						// list<DcClass>
+	Children,						// list<DcClass>
+	
+	sizeof
+}
 
-var name = argument0;
+var dcFile = argument0;
+var name = argument1;
 
-var class = dc_struct_create(name);
-class[? "id"] = noone;
-class[? "object-index"] = noone;
-class[? "object-layer"] = "";
-class[? "parents"] = ds_list_create();
-
-return class;
+var value = array_create(DcClass.sizeof);
+	value[DcDistributedType.Type] = DcType.Invalid;
+	value[DcDistributedType.Size] = 0;
+	value[DcDistributedType.Alias] = "";
+	value[DcStruct.File] = dcFile;
+	value[DcStruct.Id] = 0;
+	value[DcStruct.Name] = name;
+	value[DcStruct.Fields] = ds_list_create();
+	value[DcStruct.HasConstraint] = false;
+	value[DcClass.Constructor] = noone;
+	value[DcClass.BaseFields] = ds_list_create();
+	value[DcClass.Parents] = ds_list_create();
+	value[DcClass.Children] = ds_list_create();
+return value;

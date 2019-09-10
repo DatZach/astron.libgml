@@ -1,9 +1,27 @@
-/// @func dc_struct_create();
+/// @func dc_struct_create(dcFile);
+/// Creates a new DcStruct
+/// @param dcFile DcFile
+/// @returns DcStruct
 
-var name = argument0;
+enum DcStruct {
+	File = DcType.sizeof,	// DcFile
+	Id,						// real
+	Name,					// string
+	Fields,					// list<DcField>
+	HasConstraint,			// bool
+	
+	sizeof
+}
 
-var struct_ = ds_map_create();
-struct_[? "name"] = name;
-struct_[? "fields"] = ds_list_create();
+var dcFile = argument0;
 
-return struct_;
+var value = array_create(DcStruct.sizeof);
+	value[DcDistributedType.Type] = DcType.Invalid;
+	value[DcDistributedType.Size] = 0;
+	value[DcDistributedType.Alias] = "";
+	value[DcStruct.File] = dcFile;
+	value[DcStruct.Id] = 0;
+	value[DcStruct.Name] = "";
+	value[DcStruct.Fields] = ds_list_create();
+	value[DcStruct.HasConstraint] = false;
+return value;

@@ -1,8 +1,8 @@
 {
-    "id": "ffbfdaf6-0423-47ea-b6c3-f34495b5b3db",
+    "id": "ac6fefb2-868c-4b11-9ebf-70b0789f54b4",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "dc_field_add_keyword",
+    "name": "dc_struct_get_field_by_name",
     "IsCompatibility": false,
     "IsDnD": false
 }

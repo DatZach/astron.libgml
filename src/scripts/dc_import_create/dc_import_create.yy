@@ -1,8 +1,8 @@
 {
-    "id": "64c2c15c-e99f-4aa7-88c8-9ec890ac8ea0",
+    "id": "a12da167-6baf-405e-99cd-0e7fddaece9d",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "dc_class_find_name",
+    "name": "dc_import_create",
     "IsCompatibility": false,
     "IsDnD": false
 }

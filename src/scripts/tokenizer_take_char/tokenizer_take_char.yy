@@ -1,8 +1,8 @@
 {
-    "id": "91b9bc78-452a-4b06-8f23-f1a3c35b03f8",
+    "id": "cd2c1eeb-0d47-4b78-ae8b-675cb08173a4",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "dc_mod_load_from_file",
+    "name": "tokenizer_take_char",
     "IsCompatibility": false,
     "IsDnD": false
 }
