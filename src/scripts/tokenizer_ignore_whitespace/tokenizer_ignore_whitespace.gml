@@ -6,7 +6,6 @@ while (tokenizer[DcfpTokenizer.Index] < tokenizer[DcfpTokenizer.Length]) {
 	if (!isWhiteSpace)
 		break;
 	
-	// TODO Maybe ++index
 	tokenizer_take_char(tokenizer);
 }
 

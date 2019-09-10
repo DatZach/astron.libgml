@@ -1,10 +1,8 @@
-/// @desc token_create(type, value, line, column, position)
+/// @desc token_create(type, value, tokenizer)
 /// Creates a new DcfpToken
 /// @param type DcfpTokenType
 /// @param value string
-/// @param line real
-/// @param column real
-/// @param position real
+/// @param tokenizer DcfpTokenizer
 /// @returns DcfpToken
 
 enum DcfpTokenType {
@@ -35,14 +33,12 @@ enum DcfpToken {
 
 var type = argument0;
 var value = argument1;
-var line = argument2;
-var column = argument3;
-var position = argument4;
+var tokenizer = argument2;
 
 var value = array_create(DcfpToken.sizeof);
 	value[DcfpToken.Type] = type;
 	value[DcfpToken.Value] = value;
-	value[DcfpToken.Line] = line;
-	value[DcfpToken.Column] = column;
-	value[DcfpToken.Position] = position;
+	value[DcfpToken.Line] = tokenizer[DcfpTokenizer.CurrentLine];
+	value[DcfpToken.Column] = tokenizer[DcfpTokenizer.Index] - tokenizer[DcfpTokenizer.CurrentLineStartIndex] + 1;
+	value[DcfpToken.Position] = tokenizer[DcfpTokenizer.Index];
 return value;

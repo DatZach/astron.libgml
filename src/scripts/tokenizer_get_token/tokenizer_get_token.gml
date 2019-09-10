@@ -5,15 +5,22 @@
 
 var tokenizer = argument0;
 
-if (tokenizer[DcfpTokenizer.Index] >= tokenizer[DcfpTokenizer.Length]) {
-	// TODO Lol
-	return token_create(DcfpTokenType.EndOfStream, noone,
-		tokenizer[DcfpTokenizer.CurrentLine],
-		tokenizer[DcfpTokenizer.Index] - tokenizer[DcfpTokenizer.CurrentLineStartIndex] + 1,
-		tokenizer[DcfpTokenizer.Index]);
-}
+if (tokenizer[DcfpTokenizer.Index] >= tokenizer[DcfpTokenizer.Length])
+	return token_create(DcfpTokenType.EndOfStream, noone, tokenizer);
 
 while(true) {
 	if (tokenizer_ignore_whitespace(tokenizer))
 		break;
+	
+	if (tokenizer_ignore_comments(tokenizer))
+		continue;
+	
+	var startLine = tokenizer[DcfpTokenizer.CurrentLine];
+	var startIndex = tokenizer[DcfpTokenizer.Index];
+	var ch = tokenizer_peek_char(tokenizer);
+	
+	// String
+	if (ch == "\"") {
+		
+	}
 }
