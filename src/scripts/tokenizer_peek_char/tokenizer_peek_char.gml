@@ -5,7 +5,10 @@
 
 gml_pragma("forceinline");
 
+var tokenizer = argument[0];
+var offset = argument_count == 2 ? argument[1] : 1;
+
 return string_char_at(
-	argument0[DcfpTokenizer.Source],
-	argument0[DcfpTokenizer.Index] + 1
+	tokenizer[DcfpTokenizer.Source],
+	tokenizer[DcfpTokenizer.Index] + offset
 );
