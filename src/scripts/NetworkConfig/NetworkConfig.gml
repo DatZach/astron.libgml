@@ -1,4 +1,4 @@
-gml_pragma("global", "NetworkConfig();");
+//NetworkConfig();gml_pragma("global", "NetworkConfig();");
 
 //
 //	Game Configuration
@@ -7,7 +7,7 @@ gml_pragma("global", "NetworkConfig();");
 
 #macro NETWORK_TIMEOUT 30*1000
 #macro CLIENTAGENT_VERSION "FooGame v7.0"
-#macro DCFILE_PATH "X:\\astron.libgml\\astron\\core.dc"
+#macro DCFILE_PATH "core.dc"
 
 //
 //	Astron Configuration
@@ -198,7 +198,7 @@ enum ClientState {
 //	Global Initialization Logic
 //
 
-global.net_dcMod = dc_mod_load_from_file(DCFILE_PATH);
+global.net_dcFile = dc_file_create_from_filesystem(DCFILE_PATH);
 
 network_set_config(network_config_use_non_blocking_socket, true);
 network_set_config(network_config_connect_timeout, NETWORK_TIMEOUT);

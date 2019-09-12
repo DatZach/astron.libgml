@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "00dbd4cd-a283-4fbe-a55f-230b6bded9a4",
+            "Value": {
+                "id": "3a139b50-e865-4763-ad1e-f2c54b205178",
+                "resourcePath": "scripts\\tokenizer_is_next\\tokenizer_is_next.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "021547b8-f03c-4289-b5e6-695453b98086",
             "Value": {
                 "id": "c9b3e551-3b60-4ed7-926c-2757a36f1c05",
@@ -227,6 +235,14 @@
             "Value": {
                 "id": "3b13aa94-0d34-43e8-bd12-ab72dcc1fdc6",
                 "resourcePath": "scripts\\dc_struct_get_field_by_id\\dc_struct_get_field_by_id.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "2dd2fe6f-f8ef-486a-9855-8765553a8ca6",
+            "Value": {
+                "id": "e84f6675-8f2f-4be0-b292-351590e90b67",
+                "resourcePath": "scripts\\tokenizer_take_if\\tokenizer_take_if.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -671,6 +687,14 @@
             }
         },
         {
+            "Key": "93f3a17c-e8bb-4f65-92cc-c57b569f9cf8",
+            "Value": {
+                "id": "a9c507ab-6433-487a-9104-2c62a7fc2ea9",
+                "resourcePath": "datafiles_yy\\core.dc.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "95b1ee3f-24e8-470c-af46-b51b9874bc00",
             "Value": {
                 "id": "b7cb0257-a429-4f3f-8e14-f0e92511159e",
@@ -1111,6 +1135,14 @@
             }
         },
         {
+            "Key": "e9752cb2-3fd9-461e-b3df-51b5ce7a1343",
+            "Value": {
+                "id": "cf2d32f7-c4b1-4eb2-8cc4-962e00958038",
+                "resourcePath": "scripts\\tokenizer_get_operator_token_type\\tokenizer_get_operator_token_type.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e99f8882-8bd3-4a88-8797-e2121438a623",
             "Value": {
                 "id": "14164e7f-54dc-4044-a312-8f27d51e0fb2",
@@ -1208,9 +1240,12 @@
         "69071d81-b2e8-456b-899b-cce86226e4e1",
         "cc2f02d6-cd71-4ce4-8eb8-76e63a45b477",
         "cd2c1eeb-0d47-4b78-ae8b-675cb08173a4",
+        "00dbd4cd-a283-4fbe-a55f-230b6bded9a4",
+        "2dd2fe6f-f8ef-486a-9855-8765553a8ca6",
         "14f806e9-e80f-42d6-97f5-c1805b58ff5b",
         "7610c84c-6255-4fd6-ae6a-14213a78b66c",
         "ad046bfa-8a4a-45ab-b8c1-5a513947cfcc",
+        "e9752cb2-3fd9-461e-b3df-51b5ce7a1343",
         "08b520bc-28db-4418-9705-39ba4d1355b8",
         "4e2702e0-aca7-47f3-b4f7-0ec051ebe770",
         "6d43e5cf-c53c-49ab-8e1e-d0f6022a39ee",

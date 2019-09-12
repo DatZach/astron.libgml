@@ -6,34 +6,48 @@
 /// @returns DcfpToken
 
 enum DcfpTokenType {
+	Invalid,
+	
 	Identifier,
 	Number,
 	String,
 	
-		Keyword,
-		Struct,
-		Class,
-		Import,
-		From,
-		Typedef,
+	Keyword,
+	Struct,
+	Class,
+	Import,
+	From,
+	Typedef,
 	
-		TypeInt8,
-		TypeInt16,
-		TypeInt32,
-		TypeInt64,
-		TypeUInt8,
-		TypeUInt16,
-		TypeUInt32,
-		TypeUInt64,
-		TypeFloat32,
-		TypeFloat64,
-		TypeString,
-		TypeBlob,
-		TypeChar,
+	TypeInt8,
+	TypeInt16,
+	TypeInt32,
+	TypeInt64,
+	TypeUInt8,
+	TypeUInt16,
+	TypeUInt32,
+	TypeUInt64,
+	TypeFloat32,
+	TypeFloat64,
+	TypeString,
+	TypeBlob,
+	TypeChar,
 	
-	Semicolon,
+	Add,
+	Subtract,
+	Multiply,
+	Divide,
+	Modulo,
+	
+	LeftParen,
+	RightParen,
+	LeftBrace,
+	RightBrace,
+	LeftSquare,
+	RightSquare,
 	Comma,
-	Dot,
+	Semicolon,
+	Assign,
 	Colon,
 	
 	EndOfStream
@@ -53,10 +67,10 @@ var type = argument0;
 var value = argument1;
 var tokenizer = argument2;
 
-var value = array_create(DcfpToken.sizeof);
-	value[DcfpToken.Type] = type;
-	value[DcfpToken.Value] = value;
-	value[DcfpToken.Line] = tokenizer[DcfpTokenizer.CurrentLine];
-	value[DcfpToken.Column] = tokenizer[DcfpTokenizer.Index] - tokenizer[DcfpTokenizer.CurrentLineStartIndex] + 1;
-	value[DcfpToken.Position] = tokenizer[DcfpTokenizer.Index];
-return value;
+var obj = array_create(DcfpToken.sizeof);
+	obj[DcfpToken.Type] = type;
+	obj[DcfpToken.Value] = value;
+	obj[DcfpToken.Line] = tokenizer[DcfpTokenizer.CurrentLine];
+	obj[DcfpToken.Column] = tokenizer[DcfpTokenizer.Index] - tokenizer[DcfpTokenizer.CurrentLineStartIndex] + 1;
+	obj[DcfpToken.Position] = tokenizer[DcfpTokenizer.Index];
+return obj;

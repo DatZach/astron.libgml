@@ -6,10 +6,10 @@
 
 // TODO Optimize me pl0x
 
-var struct = argument0;
+var dcStruct = argument0;
 var fieldId = argument1;
 
-var fields = struct[@ DcStruct.Fields];
+var fields = dcStruct[@ DcStruct.Fields];
 
 for (var i = 0, size = ds_list_size(fields); i < size; ++i) {
 	var field = fields[| i];

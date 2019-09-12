@@ -18,7 +18,7 @@ var source = argument0;
 var value = array_create(DcfpTokenizer.sizeof);
 	value[DcfpTokenizer.Source] = source;
 	value[DcfpTokenizer.Length] = string_length(source);
-	value[DcfpTokenizer.Length] = 0;
+	value[DcfpTokenizer.Index] = 0;
 	value[DcfpTokenizer.CurrentLine] = 1;
 	value[DcfpTokenizer.CurrentLineStartIndex] = 0;
 return value;

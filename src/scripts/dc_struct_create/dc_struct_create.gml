@@ -4,7 +4,7 @@
 /// @returns DcStruct
 
 enum DcStruct {
-	File = DcType.sizeof,	// DcFile
+	File = DcDistributedType.sizeof,	// DcFile
 	Id,						// real
 	Name,					// string
 	Fields,					// list<DcField>

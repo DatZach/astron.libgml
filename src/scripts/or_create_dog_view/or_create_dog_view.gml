@@ -12,7 +12,7 @@ var className = argument0;
 var doId = argument1;
 var setAi = argument2;
 
-var class = dc_class_find_name(global.net_dcMod, className);
+var class = dc_file_get_class_by_name(global.net_dcFile, className);
 assert(class != noone, "Unknown class " + className);
 
 var distObj = do_create(class, doId, 0, 0);

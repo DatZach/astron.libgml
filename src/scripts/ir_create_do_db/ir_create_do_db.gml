@@ -17,7 +17,7 @@ var setAi = argument3;
 var creationCallback = argument4;
 var callbackArgs = argument5;
 
-var dclassId = dc_class_find_name(global.net_dcMod, dclassName);
+var dclassId = dc_file_get_class_by_name(global.net_dcFile, dclassName);
 assert(dclassId != noone, "Unable to find class: " + string(dclassName));
 
 var context = or_register_callback(

@@ -5,16 +5,18 @@
 
 var tokenizer = argument0;
 
-if (tokenizer[DcfpTokenizer.Index] >= tokenizer[DcfpTokenizer.Length])
-	return token_create(DcfpTokenType.EndOfStream, noone, tokenizer);
-
-while(true) {
+while(tokenizer[DcfpTokenizer.Index] < tokenizer[DcfpTokenizer.Length]) {
 	if (tokenizer_ignore_whitespace(tokenizer))
-		break;
+		continue;
 	
 	if (tokenizer_ignore_comments(tokenizer))
 		continue;
+	
+	break;
 }
+
+if (tokenizer[DcfpTokenizer.Index] >= tokenizer[DcfpTokenizer.Length])
+	return token_create(DcfpTokenType.EndOfStream, "", tokenizer);
 	
 var startLine = tokenizer[DcfpTokenizer.CurrentLine];
 var startIndex = tokenizer[DcfpTokenizer.Index];
@@ -38,17 +40,17 @@ if (ch == "\"") {
 			break;
 	}
 		
-	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 1, tokenizer[DcfpTokenizer.Index] - startIndex - 2);
+	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 2, tokenizer[DcfpTokenizer.Index] - startIndex - 2);
 	return token_create(DcfpTokenType.String, value, tokenizer);
 }
 	
 // Keyword/Identifier
 if (char_is_letter(ch) || ch == "_") {
 	do {
-		ch = tokenizer_get_token(tokenizer);
+		ch = tokenizer_take_char(tokenizer);
 	} until (!char_is_letter(ch));
 		
-	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex, tokenizer[DcfpTokenizer.Index] - startIndex);
+	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 1, tokenizer[DcfpTokenizer.Index] - startIndex - 1);
 	var tokenType = tokenizer_get_ident_token_type(value);
 	return token_create(tokenType, value, tokenizer);
 }
@@ -85,16 +87,21 @@ if (char_is_digit(ch) || (ch == "." && char_is_digit(tokenizer_peek_char(tokeniz
 			break;
 	}
 	
-	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex, tokenizer[DcfpTokenizer.Index] - startIndex);
+	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 1, tokenizer[DcfpTokenizer.Index] - startIndex);
 	// TODO Parse number to decimal
 	return token_create(DcfpTokenType.Number, value, tokenizer);
 }
 
 // Operator
-// TODO Implement
+var value = ch;
+var opType = tokenizer_get_operator_token_type(value);
+if (opType != DcfpTokenType.Invalid) {
+	ch = tokenizer_take_char(tokenizer);
+	return token_create(opType, ch, tokenizer);
+}
 
 while(char_is_whitespace(tokenizer_take_char(tokenizer))) { /* Ignore */ }
-var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex, tokenizer[DcfpTokenizer.Index] - startIndex);
+var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 1, tokenizer[DcfpTokenizer.Index] - startIndex);
 show_error(
 	"Unexpected token '" + value + "'.\n" +
 	"Line " + string(startLine) + "; Pos " + string(startIndex),
