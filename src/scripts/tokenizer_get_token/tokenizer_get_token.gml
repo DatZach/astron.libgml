@@ -17,15 +17,15 @@ while(tokenizer[DcfpTokenizer.Index] < tokenizer[DcfpTokenizer.Length]) {
 
 if (tokenizer[DcfpTokenizer.Index] >= tokenizer[DcfpTokenizer.Length])
 	return token_create(DcfpTokenType.EndOfStream, "", tokenizer);
-	
+
 var startLine = tokenizer[DcfpTokenizer.CurrentLine];
 var startIndex = tokenizer[DcfpTokenizer.Index];
 var ch = tokenizer_peek_char(tokenizer);
-	
+
 // String
 if (ch == "\"") {
 	tokenizer_take_char(tokenizer);
-		
+	
 	while (true) {
 		if (tokenizer[DcfpTokenizer.Length] >= tokenizer[DcfpTokenizer.Index]) {
 			show_error(
@@ -34,27 +34,33 @@ if (ch == "\"") {
 				true
 			);
 		}
-			
+		
 		ch = tokenizer_take_char(tokenizer);
 		if (ch == "\"")
 			break;
 	}
-		
+	
 	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 2, tokenizer[DcfpTokenizer.Index] - startIndex - 2);
 	return token_create(DcfpTokenType.String, value, tokenizer);
 }
-	
+
 // Keyword/Identifier
 if (char_is_letter(ch) || ch == "_") {
-	do {
-		ch = tokenizer_take_char(tokenizer);
-	} until (!char_is_letter(ch));
+	while(true) {
+		ch = tokenizer_peek_char(tokenizer);
+		if (char_is_letter_or_digit(ch) || ch == "_") {
+			tokenizer_take_char(tokenizer);
+			continue;
+		}
 		
-	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 1, tokenizer[DcfpTokenizer.Index] - startIndex - 1);
+		break;
+	}
+	
+	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 1, tokenizer[DcfpTokenizer.Index] - startIndex);
 	var tokenType = tokenizer_get_ident_token_type(value);
 	return token_create(tokenType, value, tokenizer);
 }
-	
+
 // Number
 // TODO Negative numbers?
 if (char_is_digit(ch) || (ch == "." && char_is_digit(tokenizer_peek_char(tokenizer, 1)))) {
@@ -69,7 +75,7 @@ if (char_is_digit(ch) || (ch == "." && char_is_digit(tokenizer_peek_char(tokeniz
 	}
 	
 	while (true) {
-		ch = tokenizer_take_char(tokenizer);
+		ch = tokenizer_peek_char(tokenizer);
 		
 		if (justTake) {
 			justTake = false;
@@ -85,6 +91,8 @@ if (char_is_digit(ch) || (ch == "." && char_is_digit(tokenizer_peek_char(tokeniz
 		
 		if (!char_is_digit(ch) && !(hasHexSpecified && char_is_hexdigit(ch)))
 			break;
+		
+		tokenizer_take_char(tokenizer);
 	}
 	
 	var value = string_copy(tokenizer[DcfpTokenizer.Source], startIndex + 1, tokenizer[DcfpTokenizer.Index] - startIndex);
