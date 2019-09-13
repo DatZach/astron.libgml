@@ -8,7 +8,9 @@
         "c3886f5d-cf12-4d2f-b979-197be52d8b3f",
         "85d59478-5296-449c-9068-ec8585f98085",
         "924852b3-98a1-4c9f-b22a-881456ccf036",
-        "e68325bb-26a1-4ac5-ac36-d6ef7b71ef38"
+        "e68325bb-26a1-4ac5-ac36-d6ef7b71ef38",
+        "49ead145-8526-4d3b-aa28-700aa7537a72",
+        "cb7a718d-9623-4f8b-b145-e8a537ca8ff1"
     ],
     "filterType": "GMScript",
     "folderName": "Lexer",

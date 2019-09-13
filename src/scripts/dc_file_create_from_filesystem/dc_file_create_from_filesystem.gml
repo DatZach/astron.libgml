@@ -23,11 +23,17 @@ while (!file_text_eof(f)) {
 file_text_close(f);
 
 var tokenizer = tokenizer_create(source);
-var token;
-do {
-	token = tokenizer_get_token(tokenizer);
-	show_debug_message(
-		"L" + string(token[DcfpToken.Line]) + "P" + string(token[DcfpToken.Column]) + " " +
-		string(token[DcfpToken.Type]) + " " + token[DcfpToken.Value]
-	);
-} until (token[DcfpToken.Type] == DcfpTokenType.EndOfStream);
+var parser = parser_create(tokenizer);
+var dcFile = parser_parse_file(parser);
+parser_destroy(parser);
+
+return dcFile;
+
+//var token;
+//do {
+//	token = tokenizer_get_token(tokenizer);
+//	show_debug_message(
+//		"L" + string(token[DcfpToken.Line]) + "P" + string(token[DcfpToken.Column]) + " " +
+//		string(token[DcfpToken.Type]) + " " + token[DcfpToken.Value]
+//	);
+//} until (token[DcfpToken.Type] == DcfpTokenType.EndOfStream);

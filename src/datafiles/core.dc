@@ -1,3 +1,6 @@
+keyword airecv;
+keyword clsend, db;
+
 // Some abstractions for readability.
 typedef uint32 doId;
 typedef uint32 zoneId;
