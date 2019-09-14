@@ -9,6 +9,8 @@ if (parser_match_and_take(parser, DcfpTokenType.Keyword)) {
 		var keyword = parser_take(parser, DcfpTokenType.Identifier);
 		ds_list_add(dcFile[DcFile.Keywords], keyword[DcfpToken.Value]);
 	} until (!parser_match_and_take(parser, DcfpTokenType.Comma));
+	
+	return true;
 }
 
 return false;

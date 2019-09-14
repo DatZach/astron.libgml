@@ -1,3 +1,10 @@
+/// @desc parser_match_and_take(parser, type);
+/// Returns if the peeked token matches the specified type. Additionally,
+/// consumes successfully matched tokens.
+/// @param parser DcParser
+/// @param type DcTokenType
+/// @returns bool
+
 var parser = argument0;
 var type = argument1;
 

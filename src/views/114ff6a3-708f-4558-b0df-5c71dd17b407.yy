@@ -7,7 +7,8 @@
         "7afd3e84-5d44-4684-917a-6cf9d2532283",
         "7c30bb0f-7643-4296-b3e4-0e296a7bee25",
         "b4685663-917a-4939-af76-3e9d685d1fff",
-        "f2450795-ab56-45ca-b6d3-e58ffdc139c5"
+        "f2450795-ab56-45ca-b6d3-e58ffdc139c5",
+        "065fefda-719f-4e02-92e5-f87a50d75925"
     ],
     "filterType": "GMScript",
     "folderName": "Private",

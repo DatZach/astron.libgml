@@ -13,7 +13,7 @@ var classes = file[@ DcFile.Classes];
 
 for (var i = 0, size = ds_list_size(classes); i < size; ++i) {
 	var class = classes[| i];
-	if (class[@ DcStruct.Name] == classId)
+	if (class[@ DcStruct.Name] == className)
 		return class;
 }
 
