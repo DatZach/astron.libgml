@@ -1,18 +1,20 @@
 /// @func dc_import_create(moduleName);
 /// Creates a new DcImport
-/// @param moduleName string
+/// @param module string
+/// @param symbols string[]
 /// @returns DcImport
 
 enum DcImport {
 	Module,				// string
-	Symbols,			// list<string>
+	Symbols,			// string[]
 	
 	sizeof
 }
 
-var moduleName = argument0;
+var module = argument0;
+var symbols = argument1;
 
 var value = array_create(DcImport.sizeof);
-	value[DcImport.Module] = moduleName;
-	value[DcImport.Symbols] = ds_list_create();
+	value[DcImport.Module] = module;
+	value[DcImport.Symbols] = symbols;
 return value;

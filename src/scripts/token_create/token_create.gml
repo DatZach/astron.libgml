@@ -49,6 +49,7 @@ enum DcfpTokenType {
 	Semicolon,
 	Assign,
 	Colon,
+	Dot,
 	
 	EndOfStream
 }

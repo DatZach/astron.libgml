@@ -9,7 +9,8 @@
         "9ed7069d-a64a-474d-b271-9e0c8ff14eed",
         "dc231efc-b6bd-4d72-a8ec-e8bda9f0869e",
         "8a0911fe-1dec-4d85-9557-16d88b4a2750",
-        "33660d7a-8dcb-4fe4-ba3e-8f432c541c5d"
+        "33660d7a-8dcb-4fe4-ba3e-8f432c541c5d",
+        "be82c35b-cca0-498d-a5c7-d8cb5879758a"
     ],
     "filterType": "GMScript",
     "folderName": "EBNF",

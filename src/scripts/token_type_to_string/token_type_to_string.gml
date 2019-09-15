@@ -42,6 +42,7 @@ switch(argument0) {
 	case DcfpTokenType.Semicolon: return "";
 	case DcfpTokenType.Assign: return "=";
 	case DcfpTokenType.Colon: return ":";
+	case DcfpTokenType.Dot: return ".";
 	
 	case DcfpTokenType.EndOfStream: return "End of Stream";
 }

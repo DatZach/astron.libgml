@@ -17,6 +17,7 @@ switch(ident) {
 	case ";": return DcfpTokenType.Semicolon;
 	case "=": return DcfpTokenType.Assign;
 	case ":": return DcfpTokenType.Colon;
+	case ".": return DcfpTokenType.Dot;
 }
 
 return DcfpTokenType.Invalid;
