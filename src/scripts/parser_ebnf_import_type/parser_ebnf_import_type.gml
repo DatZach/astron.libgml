@@ -38,4 +38,4 @@ if (isFrom) {
 var import = dc_import_create(module, symbols);
 dc_file_add_import(dcFile, import);
 
-return false;
+return true;

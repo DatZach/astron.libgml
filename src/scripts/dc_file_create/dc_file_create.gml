@@ -7,6 +7,7 @@ enum DcFile {
 	Classes,			// list<DcClass>
 	Imports,			// list<DcImport>
 	Keywords,			// list<string>
+	TypesById,			// list<DcDistributedType>
 	TypesByName,		// map<string, DcDistributedType>
 	
 	sizeof
@@ -17,6 +18,7 @@ var obj = array_create(DcFile.sizeof);
 	obj[DcFile.Classes] = ds_list_create();
 	obj[DcFile.Imports] = ds_list_create();
 	obj[DcFile.Keywords] = ds_list_create();
+	obj[DcFile.TypesById] = ds_list_create();
 	obj[DcFile.TypesByName] = ds_map_create();
 	
 	dc_file_add_keyword(obj, "required");
