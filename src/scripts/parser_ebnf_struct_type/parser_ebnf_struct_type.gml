@@ -5,15 +5,20 @@ if (!parser_match_and_take(parser, DcfpTokenType.Struct))
 	return false;
 
 var tkIdent = parser_take(parser, DcfpTokenType.Identifier);
-var dcStruct = dc_struct_create(dcFile, tkIdent[DcfpTokenType.Value]);
+var dcStruct = dc_struct_create(dcFile, tkIdent[DcfpToken.Value]);
 
 parser_take(parser, DcfpTokenType.LeftBrace);
 
 do {
 	// named_field
 	var type = parser_ebnf_type(parser, dcFile);
-	var tkIdent = parser_take(parser, DcfpTokenType.Identifier);
-	var field = dc_field_create(type, tkIdent[DcfpToken.Value]);
+	var name = "";
+	if (parser_match(parser, DcfpTokenType.Identifier)) {
+		var tkIdent = parser_take(parser, DcfpTokenType.Identifier);
+		name = tkIdent[DcfpToken.Value];
+	}
+	
+	var field = dc_field_create(type, name);
 	
 	if (parser_match_and_take(parser, DcfpTokenType.Assign)) {
 		var value = parser_ebnf_value(parser, dcFile);

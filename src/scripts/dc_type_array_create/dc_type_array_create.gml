@@ -19,9 +19,9 @@ var obj = array_create(DcArrayType.sizeof);
 	obj[DcDistributedType.Type] = DcType.Invalid;
 	obj[DcDistributedType.Size] = 0;
 	obj[DcDistributedType.Alias] = "";
+	obj[DcDistributedType.Range] = range;
 	obj[DcArrayType.ElementType] = elementType;
 	obj[DcArrayType.ArraySize] = 0;
-	obj[DcArrayType.ArrayRange] = range;
 	
 	if (range == noone) {
 		obj[DcArrayType.ArraySize] = 0;

@@ -7,6 +7,7 @@ enum DcFile {
 	Classes,			// list<DcClass>
 	Imports,			// list<DcImport>
 	Keywords,			// list<string>
+	FieldsById,			// list<DcField>
 	TypesById,			// list<DcDistributedType>
 	TypesByName,		// map<string, DcDistributedType>
 	
@@ -18,6 +19,7 @@ var obj = array_create(DcFile.sizeof);
 	obj[DcFile.Classes] = ds_list_create();
 	obj[DcFile.Imports] = ds_list_create();
 	obj[DcFile.Keywords] = ds_list_create();
+	obj[DcFile.FieldsById] = ds_list_create();
 	obj[DcFile.TypesById] = ds_list_create();
 	obj[DcFile.TypesByName] = ds_map_create();
 	

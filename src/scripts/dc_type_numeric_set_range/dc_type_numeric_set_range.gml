@@ -17,14 +17,14 @@ switch (type[DcDistributedType.Type]) {
 	case DcType.UInt16:
 	case DcType.UInt32:
 	case DcType.UInt64:
-		type[@ DcNumericType.Range] = [
+		type[@ DcDistributedType.Range] = [
 			floor(range[0] * type[DcNumericType.Divisor] + 0.5),
 			floor(range[1] * type[DcNumericType.Divisor] + 0.5)
 		];
 		break;
 	case DcType.Float32:
 	case DcType.Float64:
-		type[@ DcNumericType.Range] = [
+		type[@ DcDistributedType.Range] = [
 			range[0] * type[DcNumericType.Divisor],
 			range[1] * type[DcNumericType.Divisor]
 		];

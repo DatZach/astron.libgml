@@ -8,7 +8,6 @@ enum DcNumericType {
 	OrigModulus,						// real
 	OrigRange,							// [real, real]
 	Modulus,							// real
-	Range,								// [real, real]
 	
 	sizeof
 }
@@ -19,11 +18,11 @@ var obj = array_create(DcNumericType.sizeof);
 	obj[DcDistributedType.Type] = type;
 	obj[DcDistributedType.Size] = 0;
 	obj[DcDistributedType.Alias] = "";
+	obj[DcDistributedType.Range] = noone;
 	obj[DcNumericType.Divisor] = 1;
 	obj[DcNumericType.OrigModulus] = 0;
 	obj[DcNumericType.OrigRange] = noone;
 	obj[DcNumericType.Modulus] = 0;
-	obj[DcNumericType.Range] = noone;
 	
 	switch (type) {
 		case DcType.Char:

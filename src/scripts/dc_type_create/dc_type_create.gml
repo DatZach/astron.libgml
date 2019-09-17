@@ -6,6 +6,7 @@ enum DcDistributedType {
 	Type,			// DcType
 	Size,			// SIZETAG_T
 	Alias,			// string
+	Range,								// [real, real]
 	
 	sizeof
 }
@@ -38,4 +39,5 @@ var value = array_create(DcDistributedType.sizeof);
 	value[DcDistributedType.Type] = DcType.Invalid;
 	value[DcDistributedType.Size] = 0;
 	value[DcDistributedType.Alias] = "";
+	value[DcDistributedType.Range] = noone;
 return value;
