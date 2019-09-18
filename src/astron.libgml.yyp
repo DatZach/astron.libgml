@@ -543,6 +543,14 @@
             }
         },
         {
+            "Key": "599aba17-9c4b-4ed1-88b5-df09e2f6e068",
+            "Value": {
+                "id": "c31196e5-8c09-4c89-ba8e-3b5656f699d5",
+                "resourcePath": "scripts\\dc_type_method_add_parameter\\dc_type_method_add_parameter.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5b08341d-b3ec-4b8e-8f49-a8993cd6631f",
             "Value": {
                 "id": "78c4309a-1013-455d-9cdd-d86fd85fa930",
@@ -1407,6 +1415,14 @@
             }
         },
         {
+            "Key": "e0003b14-04fc-4808-bed5-0b7ca4622702",
+            "Value": {
+                "id": "c751084f-b86d-4003-a584-2d70ef2a08fa",
+                "resourcePath": "scripts\\dc_type_method_create\\dc_type_method_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e424e0e1-2f7a-4404-8194-1f1a7e5a0dde",
             "Value": {
                 "id": "8ed627ad-0b15-4adf-96cf-4f35ff748852",
@@ -1455,6 +1471,14 @@
             }
         },
         {
+            "Key": "e8bf999e-04ec-4c2c-916a-fcda60e8f40f",
+            "Value": {
+                "id": "889d4156-2c99-4f9c-b870-b2c9afa8a456",
+                "resourcePath": "views\\e8bf999e-04ec-4c2c-916a-fcda60e8f40f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "e9752cb2-3fd9-461e-b3df-51b5ce7a1343",
             "Value": {
                 "id": "cf2d32f7-c4b1-4eb2-8cc4-962e00958038",
@@ -1476,6 +1500,14 @@
                 "id": "4f2968ec-7645-4f54-a6cb-dbc3c77c0bfe",
                 "resourcePath": "views\\ec355c2e-03f2-47ee-8e67-68e74af1743d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f0bdfbd3-9138-4698-a515-0015a5d2e515",
+            "Value": {
+                "id": "d971f242-b61a-4fbb-9ded-9bfa02663322",
+                "resourcePath": "scripts\\dc_parameter_create\\dc_parameter_create.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1564,6 +1596,9 @@
         "9797cb6b-7248-46ec-8874-d99151602fc9",
         "be47c79e-2d13-4d43-bd0c-4db89acd3d36",
         "b53ff8a7-e995-42f8-b18d-92cb2998e1c5",
+        "e0003b14-04fc-4808-bed5-0b7ca4622702",
+        "599aba17-9c4b-4ed1-88b5-df09e2f6e068",
+        "f0bdfbd3-9138-4698-a515-0015a5d2e515",
         "e99f8882-8bd3-4a88-8797-e2121438a623",
         "f63fc594-21f8-4a67-a3a5-21d90e409f23",
         "296e591d-6bc3-40c3-a6ca-1e706c6768f5",

@@ -18,6 +18,13 @@ do {
 		name = tkIdent[DcfpToken.Value];
 	}
 	
+	if (type == noone && parser_match_and_take(parser, DcfpTokenType.LeftParen)) {
+		type = dc_type_method_create();
+		do {
+			
+		} until (parser_match_and_take(parser, DcfpTokenType.RightParen));
+	}
+	
 	var field = dc_field_create(type, name);
 	
 	if (parser_match_and_take(parser, DcfpTokenType.Assign)) {
