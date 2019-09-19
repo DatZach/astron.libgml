@@ -9,6 +9,13 @@ typedef uint64 channel;
 // The Python Views for these distributed classes.
 from gml.test import wow, *
 
+struct Test {
+	uint32 x;
+	uint32 y;
+	uint32 z;
+	uint16;
+};
+
 // A simple DOG for username/password authentication and handoff to
 // the DistributedMaproot for avatar creation.
 dclass PointOfContact {

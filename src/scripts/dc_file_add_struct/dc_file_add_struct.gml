@@ -16,4 +16,4 @@ if (!inserted)
 dcStruct[@ DcStruct.Id] = ds_list_size(typesById);
 ds_list_add(typesById, dcStruct);
 
-ds_map_add(dcStruct[DcFile.Structs], dcStruct[DcStruct.Name], dcStruct);
+ds_map_add(dcFile[DcFile.Structs], dcStruct[DcStruct.Name], dcStruct);

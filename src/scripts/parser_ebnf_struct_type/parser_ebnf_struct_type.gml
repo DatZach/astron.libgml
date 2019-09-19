@@ -36,6 +36,7 @@ do {
 	// TODO method_as_field
 	
 	dc_struct_add_field(dcStruct, field);
+	parser_take(parser, DcfpTokenType.Semicolon);
 } until (parser_match_and_take(parser, DcfpTokenType.RightBrace));
 
 dc_file_add_struct(dcFile, dcStruct);

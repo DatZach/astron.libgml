@@ -7,6 +7,7 @@
 enum DcClass {
 	Constructor = DcStruct.sizeof,	// DcField
 	BaseFields,						// list<DcField>
+	BaseFieldsByName,				// map<string, DcFields>
 	Parents,						// list<DcClass>
 	Children,						// list<DcClass>
 	
@@ -27,6 +28,7 @@ var value = array_create(DcClass.sizeof);
 	value[DcStruct.HasConstraint] = false;
 	value[DcClass.Constructor] = noone;
 	value[DcClass.BaseFields] = ds_list_create();
+	value[DcClass.BaseFieldsByName] = ds_map_create();
 	value[DcClass.Parents] = ds_list_create();
 	value[DcClass.Children] = ds_list_create();
 return value;
