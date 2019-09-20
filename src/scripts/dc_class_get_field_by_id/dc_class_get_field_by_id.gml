@@ -1,4 +1,4 @@
-/// @desc dc_class_field_find_id(class, fieldId);
+/// @desc dc_class_get_field_by_id(class, fieldId);
 /// Returns a DcField in a DcClass given a name
 /// @param class DcClass
 /// @param fieldId real

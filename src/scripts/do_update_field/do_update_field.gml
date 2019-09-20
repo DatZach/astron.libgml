@@ -9,7 +9,7 @@ var sender = argument0;
 var fieldId = argument1;
 var datagram = argument2;
 
-var method = dc_class_field_find_id(self.dclass, fieldId);
+var method = dc_class_get_field_by_id(self.dclass, fieldId);
 var fields = method[? "fields"];
 
 assert(method[? "type"] == DcType.Method, "Not a method: " + method[? "name"]);

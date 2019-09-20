@@ -6,7 +6,7 @@
 
 var fieldName = argument[0];
 
-var field = dc_class_field_find_name(self.dclass, fieldName);
+var field = dc_class_get_field_by_name(self.dclass, fieldName);
 assert(field[? "type"] == DcType.Method, "Not a method: " + fieldName);
 
 var argCount = argument_count - 1;

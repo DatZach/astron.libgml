@@ -15,7 +15,7 @@ if (parser_match_and_take(parser, DcfpTokenType.Colon)) {
 		if (definedClass == noone)
 			parser_error(parser, "Class '" + name + "' has not been declared.");
 		
-		dc_class_add_parent(definedClass);
+		dc_class_add_parent(dcClass, definedClass);
 	} until (!parser_match_and_take(parser, DcfpTokenType.Comma));
 }
 
