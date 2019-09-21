@@ -2,7 +2,7 @@
 /// Returns if DcFile has a keyword
 /// @param dcFile DcFile
 /// @param keyword string
-/// @param bool
+/// @returns bool
 
 var dcFile = argument0;
 var keyword = argument1;

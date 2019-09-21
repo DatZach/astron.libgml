@@ -12,19 +12,4 @@ if (type == noone)
 if (type == noone)
 	return noone;
 
-while (parser_match_and_take(parser, DcfpTokenType.LeftSquare)) {
-	// TODO Support chars
-	var lo = 0, hi = 0;
-	if (parser_match(parser, DcfpTokenType.Number))
-		lo = parser_take(parser, DcfpTokenType.Number);
-	if (parser_match_and_take(parser, DcfpTokenType.Subtract))
-		hi = parser_take(parser, DcfpTokenType.Number);
-	else
-		hi = lo;
-	
-	parser_take(parser, DcfpTokenType.RightSquare);
-	
-	type = dc_type_array_create(type, [lo, hi]);
-}
-
 return type;
