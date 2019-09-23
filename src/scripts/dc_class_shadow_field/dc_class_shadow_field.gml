@@ -1,8 +1,7 @@
 /// @func dc_class_shadow_field(dcClass, field);
 /// Removes a field 
 /// @param dcClass DcClass
-/// @param parent DcClass
-/// @param parentField DcField
+/// @param field DcClass
 
 var dcClass = argument0;
 var field = argument1;

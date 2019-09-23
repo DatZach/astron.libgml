@@ -4,17 +4,9 @@
 /// @param fieldId real
 /// @returns DcField | noone if error
 
-// TODO Optimize me pl0x
-
 var dcStruct = argument0;
 var fieldName = argument1;
 
-var fields = dcStruct[@ DcStruct.Fields];
-
-for (var i = 0, size = ds_list_size(fields); i < size; ++i) {
-	var field = fields[| i];
-	if (field[@ DcField.Name] == fieldName)
-		return field;
-}
-
-return noone;
+var fieldsByName = dcStruct[DcStruct.FieldsByName];
+var field = fieldsByName[? fieldName];
+return field == undefined ? noone : field;

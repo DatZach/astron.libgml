@@ -22,8 +22,31 @@ if (parser_match_and_take(parser, DcfpTokenType.Colon)) {
 parser_take(parser, DcfpTokenType.LeftBrace);
 
 while (!parser_match_and_take(parser, DcfpTokenType.RightBrace)) {
-	// TODO Molecules
+	// | molecule
+	if (parser_match(parser, DcfpTokenType.Colon, 1)) {
+		var tkIdent = parser_take(parser, DcfpTokenType.Identifier);
+		var identValue = tkIdent[DcfpToken.Value];
+		parser_take(parser, DcfpTokenType.Colon);
+		
+		var field = dc_molecular_field_create(dcClass, identValue);
+		
+		do {
+			tkIdent = parser_take(parser, DcfpTokenType.Identifier);
+			identValue = tkIdent[DcfpToken.Value];
+			var atomicField = dc_class_get_field_by_name(dcClass, identValue);
+			if (atomicField == noone)
+				parser_error(parser, "No previously declared field: " + identValue);
+			
+			dc_molecular_field_add_field(field, atomicField);
+		} until (!parser_match_and_take(parser, DcfpTokenType.Comma));
+		
+		parser_match_and_take(parser, DcfpTokenType.Semicolon);
+		
+		dc_class_add_field(dcClass, field);
+		continue;
+	}
 	
+	// | named_field
 	var field = parser_ebnf_field(parser, dcFile, true);
 	
 	while (parser_match(parser, DcfpTokenType.Keyword)) {

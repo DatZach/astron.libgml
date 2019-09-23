@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "0dc963ca-3617-420f-993d-ace49f3a5b68",
+            "Value": {
+                "id": "ce375025-46bd-4af4-bd9a-e97aeae236f9",
+                "resourcePath": "scripts\\dc_molecular_field_add_field\\dc_molecular_field_add_field.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0e59814a-b6e9-4578-be0e-59037f4e8360",
             "Value": {
                 "id": "ec1d37c9-d37b-47be-b192-5acabce0467a",
@@ -751,6 +759,14 @@
             }
         },
         {
+            "Key": "7811982a-0ff3-4645-9087-1090586b6d31",
+            "Value": {
+                "id": "6e35ffa7-2ace-4155-b862-290c8050b973",
+                "resourcePath": "scripts\\dc_field_is_molecular\\dc_field_is_molecular.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "78f864f9-8ac9-421b-a55c-4c8a3a10024f",
             "Value": {
                 "id": "c85e26e4-308a-4d08-a54a-9daa3f30b2b3",
@@ -1095,6 +1111,14 @@
             }
         },
         {
+            "Key": "b112cbcb-ea00-42f3-8768-fc6b2972b13d",
+            "Value": {
+                "id": "32d9bcaf-e844-499a-a2fd-5f9363b67701",
+                "resourcePath": "views\\b112cbcb-ea00-42f3-8768-fc6b2972b13d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "b11a583c-4580-4262-b9f3-0ee7f1e748b1",
             "Value": {
                 "id": "432684bc-4b2e-4d95-8b33-e316d6357345",
@@ -1267,6 +1291,14 @@
             "Value": {
                 "id": "9440b1c4-4a1b-4890-91a5-382f31e2ea51",
                 "resourcePath": "scripts\\parser_ebnf_defined_type\\parser_ebnf_defined_type.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c679b06e-802c-4169-a52e-81f3619c4767",
+            "Value": {
+                "id": "11f75593-b9d6-4ad8-98e0-e052d9c5143a",
+                "resourcePath": "scripts\\dc_molecular_field_create\\dc_molecular_field_create.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1677,6 +1709,9 @@
         "63f22709-3480-4209-93ee-9fb43cc30359",
         "180c2a1a-1f15-4dee-a647-15310f3cf8d7",
         "a12da167-6baf-405e-99cd-0e7fddaece9d",
+        "c679b06e-802c-4169-a52e-81f3619c4767",
+        "7811982a-0ff3-4645-9087-1090586b6d31",
+        "0dc963ca-3617-420f-993d-ace49f3a5b68",
         "da090065-89a8-4309-a2bd-f5e5b105479e",
         "7f91f279-b60b-4c1f-85e4-6d1c41a91679",
         "021547b8-f03c-4289-b5e6-695453b98086",
