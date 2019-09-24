@@ -49,8 +49,8 @@ while (!parser_match_and_take(parser, DcfpTokenType.RightBrace)) {
 	// | named_field
 	var field = parser_ebnf_field(parser, dcFile, true);
 	
-	while (parser_match(parser, DcfpTokenType.Keyword)) {
-		var tkKeyword = parser_take(parser, DcfpTokenType.Keyword);
+	while (parser_match(parser, DcfpTokenType.Identifier)) {
+		var tkKeyword = parser_take(parser, DcfpTokenType.Identifier);
 		var keyword = tkKeyword[DcfpToken.Value];
 		if (!dc_file_has_keyword(dcFile, keyword))
 			parser_error(parser, "Keyword '" + keyword + "' has not been declared.");

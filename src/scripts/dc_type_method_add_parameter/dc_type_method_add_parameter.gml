@@ -22,7 +22,7 @@ var parameterType = parameter[DcParameter.Type];
 if (method[DcDistributedType.Size] != 0 || ds_list_size(parameters) == 1)
 	method[@ DcDistributedType.Size] += parameterType[DcDistributedType.Size];
 
-if (!method[DcStruct.HasConstraint] && parameterType[DcDistributedType.Range] != noone)
-	method[@ DcStruct.HasConstraint] = true;
+if (!method[DcMethodType.HasConstraint] && parameterType[DcDistributedType.Range] != noone)
+	method[@ DcMethodType.HasConstraint] = true;
 
 return true;

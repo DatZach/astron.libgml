@@ -10,7 +10,7 @@ var baseFields = dcClass[DcClass.BaseFields];
 var fieldsById = dcClass[DcStruct.FieldsById];
 var fieldsByName = dcClass[DcStruct.FieldsByName];
 
-if (field[DcField.Struct] != undefined && field[DcField.Struct] != dcClass)
+if (field[DcField.Struct] != noone && field[DcField.Struct] != dcClass)
 	return false;
 
 var fieldName = field[DcField.Name];

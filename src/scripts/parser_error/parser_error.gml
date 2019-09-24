@@ -10,6 +10,6 @@ var token = parser_peek(parser);
 show_error(
 	errorMessage + "\n" +
 	"Line " + string(token[DcfpToken.Line]) +
-	"; Pos " + string(token[DcfpToken.Position]),
+	"; Column " + string(token[DcfpToken.Column]),
 	true
 );

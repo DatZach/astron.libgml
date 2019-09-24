@@ -1,9 +1,9 @@
 var parser = argument0;
 
 var numericBackingType;
-if (!parser_match_and_take(parser, DcfpTokenType.TypeString))
+if (parser_match_and_take(parser, DcfpTokenType.TypeString))
 	numericBackingType = DcType.Char;
-else if (!parser_match_and_take(parser, DcfpTokenType.TypeBlob))
+else if (parser_match_and_take(parser, DcfpTokenType.TypeBlob))
 	numericBackingType = DcfpTokenType.TypeBlob;
 else
 	return noone;

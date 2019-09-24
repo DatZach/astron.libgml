@@ -11,7 +11,7 @@ var tokenizer = argument0;
 var result = tokenizer_peek_char(tokenizer);
 
 ++tokenizer[@ DcfpTokenizer.Index];
-if (result == $0A /* \n */) {
+if (result == "\n") {
 	++tokenizer[@ DcfpTokenizer.CurrentLine];
 	tokenizer[@ DcfpTokenizer.CurrentLineStartIndex] = tokenizer[DcfpTokenizer.Index];
 }

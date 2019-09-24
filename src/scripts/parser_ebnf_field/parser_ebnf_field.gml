@@ -11,11 +11,18 @@ if (parser_match(parser, DcfpTokenType.Identifier)) {
 else if (nameRequired)
 	parser_error(parser, "Expected field name.");
 
+// TODO Not valid for structs
 if (type == noone && parser_match_and_take(parser, DcfpTokenType.LeftParen)) {
 	type = dc_type_method_create();
 	do {
+		var parameterField = parser_ebnf_field(parser, dcFile, true);
+		var parameter = dc_parameter_create_from_field(parameterField);
+		dc_field_destroy(parameterField);
 		
-	} until (parser_match_and_take(parser, DcfpTokenType.RightParen));
+		dc_type_method_add_parameter(type, parameter);
+	} until (!parser_match_and_take(parser, DcfpTokenType.Comma));
+	
+	parser_take(parser, DcfpTokenType.RightParen);
 }
 else {
 	while (parser_match_and_take(parser, DcfpTokenType.LeftSquare)) {
