@@ -11,11 +11,10 @@ if (parser_match(parser, DcfpTokenType.Identifier)) {
 else if (nameRequired)
 	parser_error(parser, "Expected field name.");
 
-// TODO Not valid for structs
 if (type == noone && parser_match_and_take(parser, DcfpTokenType.LeftParen)) {
 	type = dc_type_method_create();
 	do {
-		var parameterField = parser_ebnf_field(parser, dcFile, true);
+		var parameterField = parser_ebnf_field(parser, dcFile, false);
 		var parameter = dc_parameter_create_from_field(parameterField);
 		dc_field_destroy(parameterField);
 		
