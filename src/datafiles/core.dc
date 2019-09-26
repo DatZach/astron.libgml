@@ -1,19 +1,24 @@
-keyword airecv;
-keyword clsend, db;
-
 // Some abstractions for readability.
 typedef uint32 doId;
 typedef uint32 zoneId;
 typedef uint64 channel;
 
 // The Python Views for these distributed classes.
-from gml.test import wow, *
+from gml import PointOfContact/UD
+from gml import GameRoot/AI/AE
+from gml import LoginService/AI/AE
+from gml import World/AI/AE
+from gml import AIServer/AI/AE
+from gml import Avatar/AI/AE/OV
+
+struct Test2 {
+	uint32 wow;
+};
 
 struct Test {
-	uint32 x;
-	uint32 y;
-	uint32 z;
-	uint16;
+	uint32 value = 1234;
+	char ch = 'A';
+	Test2 test2 = { 4321 };
 };
 
 // A simple DOG for username/password authentication and handoff to

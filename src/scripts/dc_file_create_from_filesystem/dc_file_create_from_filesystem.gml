@@ -28,12 +28,3 @@ var dcFile = parser_parse_file(parser);
 parser_destroy(parser);
 
 return dcFile;
-
-//var token;
-//do {
-//	token = tokenizer_get_token(tokenizer);
-//	show_debug_message(
-//		"L" + string(token[DcfpToken.Line]) + "P" + string(token[DcfpToken.Column]) + " " +
-//		string(token[DcfpToken.Type]) + " " + token[DcfpToken.Value]
-//	);
-//} until (token[DcfpToken.Type] == DcfpTokenType.EndOfStream);

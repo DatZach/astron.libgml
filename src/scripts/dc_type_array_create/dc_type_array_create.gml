@@ -20,6 +20,7 @@ var obj = array_create(DcArrayType.sizeof);
 	obj[DcDistributedType.Size] = 0;
 	obj[DcDistributedType.Alias] = "";
 	obj[DcDistributedType.Range] = range;
+	obj[DcDistributedType.SCR_GenerateHash] = dc_type_array_generate_hash;
 	obj[DcArrayType.ElementType] = elementType;
 	obj[DcArrayType.ArraySize] = 0;
 	

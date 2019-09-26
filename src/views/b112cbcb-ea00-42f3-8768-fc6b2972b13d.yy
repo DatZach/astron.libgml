@@ -6,7 +6,8 @@
     "children": [
         "c679b06e-802c-4169-a52e-81f3619c4767",
         "7811982a-0ff3-4645-9087-1090586b6d31",
-        "0dc963ca-3617-420f-993d-ace49f3a5b68"
+        "0dc963ca-3617-420f-993d-ace49f3a5b68",
+        "967e3f2b-4508-4739-ae7d-8edd24205239"
     ],
     "filterType": "GMScript",
     "folderName": "MolecularField",

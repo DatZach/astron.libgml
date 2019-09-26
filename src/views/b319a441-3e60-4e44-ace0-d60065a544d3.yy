@@ -12,7 +12,8 @@
         "47d6b2d8-8e2e-40f2-b5e6-9dc846fec244",
         "3cde84db-5020-476c-a947-b7ed98688075",
         "63f22709-3480-4209-93ee-9fb43cc30359",
-        "180c2a1a-1f15-4dee-a647-15310f3cf8d7"
+        "180c2a1a-1f15-4dee-a647-15310f3cf8d7",
+        "b806f8e0-bf81-4960-9c5a-d40d7b487363"
     ],
     "filterType": "GMScript",
     "folderName": "Class",

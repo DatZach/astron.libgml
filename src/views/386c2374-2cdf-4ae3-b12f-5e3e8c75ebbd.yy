@@ -10,7 +10,9 @@
         "7f91f279-b60b-4c1f-85e4-6d1c41a91679",
         "021547b8-f03c-4289-b5e6-695453b98086",
         "2ca8fa9c-cc54-416d-9e73-cfde548f7438",
-        "c40a2eed-f233-424c-adeb-fb78a96ef296"
+        "c40a2eed-f233-424c-adeb-fb78a96ef296",
+        "30fed3c1-1e62-49db-bd5f-1c2e36a5c014",
+        "14a1bfb7-af91-4e5a-adea-2ed46ccd851f"
     ],
     "filterType": "GMScript",
     "folderName": "Field",

@@ -13,6 +13,8 @@ enum DcField {
 	HasDefaultValue,		// bool
 	DefaultValue,			// string
 	
+	SCR_GenerateHash,
+	
 	sizeof
 }
 
@@ -27,4 +29,5 @@ var value = array_create(DcField.sizeof);
 	value[DcField.Type] = type;
 	value[DcField.HasDefaultValue] = false;
 	value[DcField.DefaultValue] = "";
+	value[DcField.SCR_GenerateHash] = dc_field_generate_hash_base;
 return value;
