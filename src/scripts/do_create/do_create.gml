@@ -16,7 +16,8 @@ var zoneId = argument3;
 
 assert(object_is_ancestor(self.object_index, pObjectRepository), "Self must be pObjectRepository");
 
-var distObj = instance_create_layer(0, 0, class[? "object-layer"], class[? "object-index"]);
+var objectIndex = asset_get_index("do" + class[DcStruct.Name]);
+var distObj = instance_create_layer(0, 0, LAYER_INSTANCES, objectIndex);
 distObj.repo = self;
 distObj.dclass = class;
 distObj.doId = doId;

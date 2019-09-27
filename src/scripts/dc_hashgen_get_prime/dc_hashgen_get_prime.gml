@@ -15,7 +15,7 @@ while (ds_list_size(primes) <= n) {
 	var j = 0;
 	
 	while (maybePrime && primes[| j] * primes[| j] <= candidate) {
-		if (primes[| j] * (candidate / primes[| j]) == candidate)
+		if (primes[| j] * (candidate div primes[| j]) == candidate)
 			maybePrime = false;
 		
 		++j;

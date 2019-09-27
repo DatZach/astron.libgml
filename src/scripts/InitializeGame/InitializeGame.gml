@@ -18,5 +18,5 @@
 
 NetworkConfig();
 
-instance_create_layer(0, 0, LAYER_INSTANCES, mServer);
+//instance_create_layer(0, 0, LAYER_INSTANCES, mServer);
 instance_create_layer(0, 0, LAYER_INSTANCES, mClient);

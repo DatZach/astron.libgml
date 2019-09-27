@@ -1239,14 +1239,6 @@
             }
         },
         {
-            "Key": "b11a583c-4580-4262-b9f3-0ee7f1e748b1",
-            "Value": {
-                "id": "432684bc-4b2e-4d95-8b33-e316d6357345",
-                "resourcePath": "scripts\\parser_ebnf_typedecl\\parser_ebnf_typedecl.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "b2c7c8d9-d24b-481e-ac98-aa8fb291d308",
             "Value": {
                 "id": "26f2b9d1-0634-4062-879a-775538bdc8fc",
@@ -1939,7 +1931,6 @@
         "c4f724e4-dd80-4b23-8b07-bd662b46e4a6",
         "c259bf23-3932-48fa-b5ae-c91b3a86bced",
         "159d35ee-b81d-42f0-842d-38f696c16422",
-        "b11a583c-4580-4262-b9f3-0ee7f1e748b1",
         "9ed7069d-a64a-474d-b271-9e0c8ff14eed",
         "dc231efc-b6bd-4d72-a8ec-e8bda9f0869e",
         "8a0911fe-1dec-4d85-9557-16d88b4a2750",

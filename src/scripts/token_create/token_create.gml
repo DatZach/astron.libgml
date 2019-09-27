@@ -11,6 +11,7 @@ enum DcfpTokenType {
 	Identifier,
 	Number,
 	String,
+	Character,
 	
 	Keyword,
 	Struct,

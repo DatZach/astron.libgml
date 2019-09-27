@@ -44,6 +44,14 @@ if (ch == "\"") {
 	return token_create(DcfpTokenType.String, value, tokenizer);
 }
 
+// Character
+if (ch == "\'") {
+	tokenizer_take_char(tokenizer);
+	var value = tokenizer_take_char(tokenizer);
+	if (tokenizer_take_char(tokenizer) == "\'")
+		return token_create(DcfpTokenType.Character, value, tokenizer);	
+}
+
 // Keyword/Identifier
 if (char_is_letter(ch) || ch == "_") {
 	while(true) {

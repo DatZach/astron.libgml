@@ -30,8 +30,19 @@ if (isFrom) {
 			continue;
 		}
 		
+		//while (true) {
+		//	if (parser_match(parser, DcfpTokenType.Identifier
+		//	var tkIdent = parser_take(parser, DcfpTokenType.Identifier);
+		//	symbols[i++] = tkIdent[DcfpToken.Value];
+		//}
+		
 		var tkIdent = parser_take(parser, DcfpTokenType.Identifier);
 		symbols[i++] = tkIdent[DcfpToken.Value];
+		
+		while (parser_match_and_take(parser, DcfpTokenType.Divide)) {
+			var tkIdent = parser_take(parser, DcfpTokenType.Identifier);
+			symbols[i++] = symbols[0] + tkIdent[DcfpToken.Value];
+		}
 	} until (!parser_match_and_take(parser, DcfpTokenType.Comma));
 }
 
