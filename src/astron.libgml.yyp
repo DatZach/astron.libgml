@@ -370,7 +370,7 @@
             "Key": "30fed3c1-1e62-49db-bd5f-1c2e36a5c014",
             "Value": {
                 "id": "567aad15-67d3-4eb5-b020-dcf4e83adefa",
-                "resourcePath": "scripts\\dc_field_generate_hash_base\\dc_field_generate_hash_base.yy",
+                "resourcePath": "scripts\\dc_field_generate_hash_atomic\\dc_field_generate_hash_atomic.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1447,6 +1447,14 @@
             }
         },
         {
+            "Key": "c8bfc070-13c6-4cab-8c8a-600b848f9294",
+            "Value": {
+                "id": "7ab73737-a6c3-4868-8510-802739fc7f88",
+                "resourcePath": "scripts\\dc_field_keywords_generate_hash\\dc_field_keywords_generate_hash.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c8ee8bbb-cee4-4a7d-adbc-8222292dacac",
             "Value": {
                 "id": "6ae52fa6-bd26-4326-9077-76be7263d2ed",
@@ -1889,6 +1897,7 @@
         "c40a2eed-f233-424c-adeb-fb78a96ef296",
         "30fed3c1-1e62-49db-bd5f-1c2e36a5c014",
         "14a1bfb7-af91-4e5a-adea-2ed46ccd851f",
+        "c8bfc070-13c6-4cab-8c8a-600b848f9294",
         "98d6b61b-3de3-4841-8146-fde0fd6e821d",
         "fb172b62-0857-4d4c-9af2-7072aabaf06b",
         "105b0056-ede0-44d3-bc47-0f1dadcabc7c",

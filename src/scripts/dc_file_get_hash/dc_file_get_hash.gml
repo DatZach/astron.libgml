@@ -9,21 +9,20 @@ var hg = dc_hashgen_create();
 
 var classes = dcFile[DcFile.Classes];
 var classesLength = ds_list_size(classes);
-dc_hashgen_add_int(hg, classesLength);
-for (var i = 0; i < classesLength; ++i)
-	dc_class_generate_hash(classes[| i], hg);
-
 var structs = dcFile[DcFile.Structs];
 var structsLength = ds_list_size(structs);
-dc_hashgen_add_int(hg, structsLength);
-for (var i = 0; i < structsLength; ++i)
-	dc_struct_generate_hash(structs[| i], hg);
 
-var keywords = dcFile[DcFile.Keywords];
-var keywordsLength = ds_list_size(structs);
-dc_hashgen_add_int(hg, keywordsLength);
-for (var i = 0; i < keywordsLength; ++i)
-	dc_hashgen_add_string(hg, keywords[| i]);
+dc_hashgen_add_int(hg, 1);
+dc_hashgen_add_int(hg, structsLength + classesLength);
+
+var typesById = dcFile[DcFile.TypesById];
+for (var i = 0, isize = ds_list_size(typesById); i < isize; ++i) {
+	var type = typesById[| i];
+	if (dc_file_get_class_by_id(dcFile, i) != noone)
+		dc_class_generate_hash(type, hg);
+	else
+		dc_struct_generate_hash(type, hg);
+}
 
 var hash = dc_hashgen_get_hash(hg);
 dc_hashgen_destroy(hg);

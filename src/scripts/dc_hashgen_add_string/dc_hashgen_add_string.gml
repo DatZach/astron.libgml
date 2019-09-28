@@ -9,4 +9,4 @@ var str = argument1;
 var length = string_length(str);
 dc_hashgen_add_int(hashGenerator, length);
 for (var i = 0; i < length; ++i)
-	dc_hashgen_add_int(hashGenerator, string_ord_at(str, i));
+	dc_hashgen_add_int(hashGenerator, string_ord_at(str, i + 1));

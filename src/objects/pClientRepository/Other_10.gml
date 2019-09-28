@@ -6,3 +6,4 @@ var dg = dg_create();
 	dg_write(dg, dg_type_u32, dcHash);
 	dg_write(dg, dg_type_string, CLIENTAGENT_VERSION);
 dg_send(dg, self.socket);
+

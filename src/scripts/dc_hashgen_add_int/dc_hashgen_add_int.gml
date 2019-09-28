@@ -6,7 +6,7 @@
 var MAX_PRIME_NUMBERS = 10000;
 
 var hashGenerator = argument0;
-var num = argument1;
+var num = int64(argument1);
 
 var prime = dc_hashgen_get_prime(hashGenerator, hashGenerator[DcHashGenerator.Index]);
 hashGenerator[@ DcHashGenerator.Hash] += prime * num;

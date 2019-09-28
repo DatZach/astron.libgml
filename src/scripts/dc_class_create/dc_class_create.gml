@@ -18,7 +18,7 @@ var dcFile = argument0;
 var name = argument1;
 
 var value = array_create(DcClass.sizeof);
-	value[DcDistributedType.Type] = DcType.Invalid;
+	value[DcDistributedType.Type] = DcType.Struct;
 	value[DcDistributedType.Size] = 0;
 	value[DcDistributedType.Alias] = "";
 	value[DcStruct.File] = dcFile;

@@ -1,7 +1,7 @@
 var dcClass = argument0;
 var hashGenerator = argument1;
 
-dc_type_generate_hash(dcClass, hashGenerator);
+//dc_type_generate_hash(dcClass, hashGenerator);
 dc_hashgen_add_string(hashGenerator, dcClass[DcStruct.Name]);
 
 var parents = dcClass[DcClass.Parents];
