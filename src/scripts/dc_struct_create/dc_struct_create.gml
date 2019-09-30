@@ -23,6 +23,7 @@ var value = array_create(DcStruct.sizeof);
 	value[DcDistributedType.Type] = DcType.Struct;
 	value[DcDistributedType.Size] = 0;
 	value[DcDistributedType.Alias] = "";
+	value[DcDistributedType.Range] = noone;
 	value[DcStruct.File] = dcFile;
 	value[DcStruct.Id] = 0;
 	value[DcStruct.Name] = name;

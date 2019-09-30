@@ -19,7 +19,6 @@ var obj = array_create(DcNumericType.sizeof);
 	obj[DcDistributedType.Size] = 0;
 	obj[DcDistributedType.Alias] = "";
 	obj[DcDistributedType.Range] = noone;
-	obj[DcDistributedType.SCR_GenerateHash] = dc_type_numeric_generate_hash;
 	obj[DcNumericType.Divisor] = 1;
 	obj[DcNumericType.OrigModulus] = 0;
 	obj[DcNumericType.OrigRange] = noone;

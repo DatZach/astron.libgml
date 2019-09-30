@@ -26,9 +26,10 @@ dg_write(dg, dg_type_u16, field[DcField.Id]);
 
 for (var i = 0; i < fieldArgCount; ++i) {
 	var arg = arguments[| i];
+	var argType = arg[DcParameter.Type];
 	var value = argument[i + 1];
 	
-	dc_field_datagram_write(dg, arg, value);
+	dc_field_datagram_write(dg, argType, value);
 }
 
 return dg_send(dg, self.repo.socket);

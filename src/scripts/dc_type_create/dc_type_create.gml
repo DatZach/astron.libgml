@@ -7,7 +7,6 @@ enum DcDistributedType {
 	Size,			// SIZETAG_T
 	Alias,			// string
 	Range,			// [real, real]
-	SCR_GenerateHash, // script
 	
 	sizeof
 }
@@ -41,5 +40,4 @@ var value = array_create(DcDistributedType.sizeof);
 	value[DcDistributedType.Size] = 0;
 	value[DcDistributedType.Alias] = "";
 	value[DcDistributedType.Range] = noone;
-	value[DcDistributedType.SCR_GenerateHash] = undefined;
 return value;

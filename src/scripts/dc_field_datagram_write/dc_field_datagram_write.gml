@@ -4,14 +4,10 @@
 /// @param value var
 
 var dg = argument0;
-var field = argument1;
+var type = argument1;
 var value = argument2;
 
-var fieldType = field[DcField.Type];
-var type = fieldType[DcDistributedType.Type];
-
-// TODO Update to use dg_write
-switch(type) {
+switch(type[DcDistributedType.Type]) {
 	case DcType.Int8:
 		return dg_write(dg, dg_type_u8, value);
 	case DcType.Int16:
@@ -31,7 +27,7 @@ switch(type) {
 	case DcType.Float64:
 		return dg_write(dg, dg_type_f64, value);
 	case DcType.String: {
-		var fixedSize = field[? "size"];
+		var fixedSize = type[DcDistributedType.Size];
 		var strLen = string_byte_length(value);
 			
 		for (var i = 0; i < fixedSize; ++i) {
@@ -69,5 +65,5 @@ switch(type) {
 	case DcType.Struct:
 	case DcType.Method:
 	default:
-		assert(false, "Cannot pack field type: " + string(type));
+		assert(false, "Cannot pack field type: " + string(type[DcDistributedType.Type]));
 }

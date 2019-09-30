@@ -15,7 +15,6 @@ var obj = array_create(DcMethodType.sizeof);
 	obj[DcDistributedType.Size] = 0;
 	obj[DcDistributedType.Alias] = "";
 	obj[DcDistributedType.Range] = noone;
-	obj[DcDistributedType.SCR_GenerateHash] = dc_type_method_generate_hash;
 	obj[DcMethodType.Parameters] = ds_list_create();
 	obj[DcMethodType.ParametersByName] = ds_map_create();
 	obj[DcMethodType.HasConstraint] = false;
