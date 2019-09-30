@@ -199,7 +199,7 @@ enum ClientState {
 //
 
 global.net_dcFile = dc_file_create_from_filesystem(DCFILE_PATH);
-var dcHash = dc_file_get_hash(global.net_dcFile);
+global.net_dcFileHash = dc_file_get_hash(global.net_dcFile);
 
 network_set_config(network_config_use_non_blocking_socket, true);
 network_set_config(network_config_connect_timeout, NETWORK_TIMEOUT);

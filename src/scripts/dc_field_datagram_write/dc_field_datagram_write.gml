@@ -7,28 +7,29 @@ var dg = argument0;
 var field = argument1;
 var value = argument2;
 
-var type = field[? "type"];
+var fieldType = field[DcField.Type];
+var type = fieldType[DcDistributedType.Type];
 
 // TODO Update to use dg_write
 switch(type) {
 	case DcType.Int8:
-		return buffer_write(dg, buffer_s8, value);
+		return dg_write(dg, dg_type_u8, value);
 	case DcType.Int16:
-		return buffer_write(dg, buffer_s16, value);
+		return dg_write(dg, dg_type_s16, value);
 	case DcType.Int32:
-		return buffer_write(dg, buffer_s32, value);
+		return dg_write(dg, dg_type_s32, value);
 	case DcType.UInt8:
-		return buffer_write(dg, buffer_u8, value);
+		return dg_write(dg, dg_type_u8, value);
 	case DcType.UInt16:
-		return buffer_write(dg, buffer_u16, value);
+		return dg_write(dg, dg_type_u16, value);
 	case DcType.UInt32:
-		return buffer_write(dg, buffer_u32, value);
+		return dg_write(dg, dg_type_u32, value);
 	case DcType.Char:
-		return buffer_write(dg, buffer_u8, value);
+		return dg_write(dg, dg_type_u8, value);
 	case DcType.Float32:
-		return buffer_write(dg, buffer_f32, value);
+		return dg_write(dg, dg_type_f32, value);
 	case DcType.Float64:
-		return buffer_write(dg, buffer_f64, value);
+		return dg_write(dg, dg_type_f64, value);
 	case DcType.String: {
 		var fixedSize = field[? "size"];
 		var strLen = string_byte_length(value);
@@ -36,10 +37,10 @@ switch(type) {
 		for (var i = 0; i < fixedSize; ++i) {
 			if (i < strLen) {
 				var ch = string_byte_at(value, i);
-				buffer_write(dg, buffer_u8, ch);
+				buffer_write(dg, dg_type_u8, ch);
 			}
 			else
-				buffer_write(dg, buffer_u8, 0);
+				buffer_write(dg, dg_type_u8, 0);
 		}
 			
 		return 0;

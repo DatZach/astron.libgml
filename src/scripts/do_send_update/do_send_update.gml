@@ -7,12 +7,13 @@
 var fieldName = argument[0];
 
 var field = dc_class_get_field_by_name(self.dclass, fieldName);
-assert(field[? "type"] == DcType.Method, "Not a method: " + fieldName);
+var fieldType = field[DcField.Type];
+assert(fieldType[DcDistributedType.Type] == DcType.Method, "Not a method: " + fieldName);
 
 var argCount = argument_count - 1;
-var arguments = field[? "fields"];
+var arguments = fieldType[DcMethodType.Parameters];
 var fieldArgCount = ds_list_size(arguments);
-assert(argCount == fieldArgCount, "Argument count mismatch: " + string(argCount) + " != " + string(fieldArgCount));
+assert(argCount == fieldArgCount, "Unable to update field '" + fieldName + "'.\nArgument count mismatch: " + string(argCount) + " != " + string(fieldArgCount));
 
 var dg = dg_create();
 if (object_is_ancestor(self.repo.object_index, pClientRepository))
@@ -21,7 +22,7 @@ else
 	dg_write_server_header(dg, STATESERVER_OBJECT_SET_FIELD, self.doId, self.doId);
 
 dg_write(dg, dg_type_doid, self.doId);
-dg_write(dg, dg_type_u16, field[? "id"]);
+dg_write(dg, dg_type_u16, field[DcField.Id]);
 
 for (var i = 0; i < fieldArgCount; ++i) {
 	var arg = arguments[| i];

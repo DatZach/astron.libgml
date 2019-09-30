@@ -26,7 +26,7 @@ var obj = array_create(DcArrayType.sizeof);
 	
 	if (range == noone) {
 		obj[DcArrayType.ArraySize] = 0;
-		obj[DcArrayType.ArrayRange] = [0, $ffffffffffffffff];
+		obj[DcArrayType.ArrayRange] = noone; //[0, $ffffffffffffffff];
 	}
 	else if (range[0] == range[1]) {
 		obj[DcArrayType.ArraySize] = range[0];

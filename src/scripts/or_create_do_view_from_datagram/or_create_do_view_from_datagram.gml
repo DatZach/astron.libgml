@@ -20,7 +20,7 @@ var dclassId = dg_read(dg, dg_type_u16);
 
 var dclass = dc_file_get_class_by_id(global.net_dcFile, dclassId);
 if (classPostfix != "")
-	dclass = dc_file_get_class_by_name(global.net_dcFile, dclass[? "name"] + classPostfix);
+	dclass = dc_file_get_class_by_name(global.net_dcFile, dclass[DcStruct.Name] + classPostfix);
 
 var distObj = do_create(dclass, doId, parentId, zoneId);
 self.distributedObjects[? doId] = distObj;
