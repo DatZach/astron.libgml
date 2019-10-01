@@ -1,13 +1,14 @@
 /// @desc dc_field_datagram_read(datagram, field);
 /// Reads a field from a datagram
 /// @param datagram Datagram
-/// @param field dc_field
+/// @param field DcParameter
 /// @ref DatagramIterator.h void unpack_dtype(...)
 
 var dg = argument0;
-var field = argument1;
+var parameter = argument1;
 
-var type = field[? "type"];
+var parameterType = parameter[DcParameter.Type];
+var type = parameterType[DcDistributedType.Type];
 switch(type) {
 	case DcType.Int8:
 		return dg_read(dg, dg_type_s8);

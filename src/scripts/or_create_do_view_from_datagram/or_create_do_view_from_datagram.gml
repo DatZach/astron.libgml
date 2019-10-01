@@ -19,10 +19,9 @@ var zoneId = dg_read(dg, dg_type_zone);
 var dclassId = dg_read(dg, dg_type_u16);
 
 var dclass = dc_file_get_class_by_id(global.net_dcFile, dclassId);
-if (classPostfix != "")
-	dclass = dc_file_get_class_by_name(global.net_dcFile, dclass[DcStruct.Name] + classPostfix);
+var className = dclass[DcStruct.Name] + classPostfix;
 
-var distObj = do_create(dclass, doId, parentId, zoneId);
+var distObj = do_create(className, doId, parentId, zoneId);
 self.distributedObjects[? doId] = distObj;
 
 return distObj;

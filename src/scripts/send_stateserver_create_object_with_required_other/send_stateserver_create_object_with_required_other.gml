@@ -7,7 +7,7 @@ var dg = dg_create();
 	dg_write(dg, dg_type_doid, self.doId);
 	dg_write(dg, dg_type_doid, self.parentId);
 	dg_write(dg, dg_type_doid, self.zoneId);
-	dg_write(dg, dg_type_u16, self.dclass[? "id"]);
+	dg_write(dg, dg_type_u16, self.dclass[DcStruct.Id]);
 	// TODO Add REQUIRED fields
 	// TODO Add OTHER fields
 return dg_send(dg, self.socket);
