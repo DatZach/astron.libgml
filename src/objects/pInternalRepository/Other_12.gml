@@ -22,15 +22,33 @@ switch(messageType) {
 		break;
 	}
 	
-	case STATESERVER_OBJECT_CHANGING_LOCATION: {
+	case STATESERVER_OBJECT_CHANGING_LOCATION: { // IR
 		var doId = dg_read(dg, dg_type_doid);
 		var newParent = dg_read(dg, dg_type_doid);
 		var newZone = dg_read(dg, dg_type_zone);
 		var oldParent = dg_read(dg, dg_type_doid);
 		var oldZone = dg_read(dg, dg_type_zone);
-		// TODO Implement
+		
 		trace("STATESERVER_OBJECT_CHANGING_LOCATION ", doId, " ", newParent, " ", newZone, " ",
 			  oldParent, " ", oldZone);
+		
+		var location = parent_zone_to_location(newParent, newZone);
+		if (ds_map_exists(doiLocationToDoid, location)) {
+			var interestedDos = doiLocationToDoid[? location];
+			for (var i = 0, isize = array_length_1d(interestedDos); i < isize; ++i) {
+				with(distributedObjects[? interestedDos[i]])
+					do_raise_interest_changing_location_enter(sender, doId, newParent, newZone, oldParent, oldZone);
+			}
+		}
+		
+		location = parent_zone_to_location(oldParent, oldZone);
+		if (ds_map_exists(doiLocationToDoid, location)) {
+			var interestedDos = doiLocationToDoid[? location];
+			for (var i = 0, isize = array_length_1d(interestedDos); i < isize; ++i) {
+				with(distributedObjects[? interestedDos[i]])
+					do_raise_interest_changing_location_leave(sender, doId, newParent, newZone, oldParent, oldZone);
+			}
+		}
 		break;
 	}
 	
@@ -43,13 +61,33 @@ switch(messageType) {
 	
 	case STATESERVER_OBJECT_ENTER_LOCATION_WITH_REQUIRED: {
 		trace("STATESERVER_OBJECT_ENTER_LOCATION_WITH_REQUIRED");
-		or_create_do_view_from_datagram(dg, "AE");
+		var newDo = or_create_do_view_from_datagram(dg, "AE");
+		if (newDo != noone) {
+			var location = parent_zone_to_location(newDo.parentId, newDo.zoneId);
+			if (ds_map_exists(doiLocationToDoid, location)) {
+				var interestedDos = doiLocationToDoid[? location];
+				for (var i = 0, isize = array_length_1d(interestedDos); i < isize; ++i) {
+					with(distributedObjects[? interestedDos[i]])
+						do_raise_interest_do_enter(newDo, newDo.doId, newDo.parentId, newDo.zoneId);
+				}
+			}
+		}
 		break;
 	}
 	
 	case STATESERVER_OBJECT_ENTER_AI_WITH_REQUIRED: {
 		trace("STATESERVER_OBJECT_ENTER_AI_WITH_REQUIRED");
-		or_create_do_view_from_datagram(dg, "AI");
+		var newDo = or_create_do_view_from_datagram(dg, "AI");
+		if (newDo != noone) {
+			var location = parent_zone_to_location(newDo.parentId, newDo.zoneId);
+			if (ds_map_exists(doiLocationToDoid, location)) {
+				var interestedDos = doiLocationToDoid[? location];
+				for (var i = 0, isize = array_length_1d(interestedDos); i < isize; ++i) {
+					with(distributedObjects[? interestedDos[i]])
+						do_raise_interest_do_ai_enter(newDo, newDo.doId, newDo.parentId, newDo.zoneId);
+				}
+			}
+		}
 		break;
 	}
 

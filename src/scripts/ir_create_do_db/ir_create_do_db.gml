@@ -10,20 +10,22 @@
 
 assert_ancestor(pObjectRepository);
 
-var dclassName = argument0;
-var parentId = argument1;
-var zoneAi = argument2;
-var setAi = argument3;
-var creationCallback = argument4;
-var callbackArgs = argument5;
+var dclassName = argument[0];
+var parentId = argument[1];
+var zoneAi = argument[2];
+var setAi = argument[3];
 
 var dclassId = dc_file_get_class_by_name(global.net_dcFile, dclassName);
 assert(dclassId != noone, "Unable to find class: " + string(dclassName));
 
-var context = or_register_callback(
-	DBSERVER_CREATE_OBJECT,
-	ir_create_do_db_callback,
-	[parentId, zoneAi, setAi, creationCallback, callbackArgs]
-);
+if (argument_count > 4) {
+	var creationCallback = argument[4];
+	var callbackArgs = argument[5];
+	var context = or_register_callback(
+		DBSERVER_CREATE_OBJECT,
+		ir_create_do_db_callback,
+		[parentId, zoneAi, setAi, creationCallback, callbackArgs]
+	);
+}
 
 send_dbserver_create_object(dclassId, context);

@@ -14,7 +14,8 @@ var doId = argument1;
 var parentId = argument2;
 var zoneId = argument3;
 
-assert(object_is_ancestor(self.object_index, pObjectRepository), "Self must be pObjectRepository");
+assert(object_is_ancestor(self.object_index, pObjectRepository),
+	"Self must be pObjectRepository");
 
 var class = dc_file_get_class_by_name(global.net_dcFile, className);
 if (class == noone) {
@@ -27,12 +28,14 @@ assert(class != noone, "Unknown class " + className);
 
 var objectIndex = asset_get_index("do" + className);
 var distObj = instance_create_layer(0, 0, LAYER_INSTANCES, objectIndex);
+distObj.persistent = true;
 distObj.repo = self;
 distObj.dclass = class;
 distObj.doId = doId;
 distObj.parentId = parentId;
 distObj.zoneId = zoneId;
 
+// TODO Implement
 //var fields = class[? "fields"];
 //for (var i = 0, len = ds_list_size(fields); i < len; ++i) {
 //	var field = fields[| i];
