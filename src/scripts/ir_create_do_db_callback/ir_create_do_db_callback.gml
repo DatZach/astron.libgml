@@ -25,7 +25,7 @@ if (setAi)
 // TODO STATESERVER_OBJECT_SET_LOCATION not required?
 // TODO Do SET_AI if requested
 
-if (creationCallback != noone) {
+if (creationCallback != undefined) {
 	var args = [doId, parentId, zoneId, setAi];
 	array_copy(args, 4, additionalArgs, 0, array_length_1d(additionalArgs));
 	script_execute_va(creationCallback, args);

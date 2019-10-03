@@ -9,6 +9,10 @@
 #macro CLIENTAGENT_VERSION "FooGame v7.0"
 #macro DCFILE_PATH "core.dc"
 
+#macro CHANNEL_STATESERVER 402000
+#macro CHANNEL_DBSS 402001
+#macro CHANNEL_AI 500000
+
 //
 //	Astron Configuration
 //	MODIFY ACCORDING TO ASTRON

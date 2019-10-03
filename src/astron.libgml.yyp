@@ -271,6 +271,14 @@
             }
         },
         {
+            "Key": "1cc8d552-33f1-491e-9c99-ab8bb1a782d1",
+            "Value": {
+                "id": "96e0a78d-83ca-4e61-ba84-d12ddac71176",
+                "resourcePath": "scripts\\LoginServiceAI_interest_do_enter\\LoginServiceAI_interest_do_enter.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1d16e137-cf05-40d9-a174-506990e49999",
             "Value": {
                 "id": "acc8bf4a-5ee4-4091-aa23-1a11300ae803",
@@ -2107,6 +2115,7 @@
         "613bf03d-a357-47ee-943f-d9f63b72a1f4",
         "dfac6e23-4119-4889-ae23-7113ae76d1cd",
         "0af465c4-fa3d-4454-843b-64a2a52bed4a",
+        "1cc8d552-33f1-491e-9c99-ab8bb1a782d1",
         "06dc8262-cebd-492a-927b-25f8586d1df1",
         "9c722dee-3e69-46b0-b6c0-807b852fbd44"
     ],

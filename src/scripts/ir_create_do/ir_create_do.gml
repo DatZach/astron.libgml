@@ -15,9 +15,10 @@ var parentId = argument2;
 var zoneId = argument3;
 var setAi = argument4;
 
-var dclassId = dc_file_get_class_by_name(global.net_dcFile, dclassName);
-assert(dclassId != noone, "Unable to find class: " + string(dclassName));
+var dclass = dc_file_get_class_by_name(global.net_dcFile, dclassName);
+assert(dclass != noone, "Unable to find class: " + string(dclassName));
 
+var dclassId = dclass[DcStruct.Id];
 send_stateserver_create_object_with_required(dclassId, doId, parentId, zoneId);
 if (setAi)
 	send_stateserver_object_set_ai(doId);

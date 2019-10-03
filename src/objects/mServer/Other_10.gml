@@ -9,9 +9,9 @@ ir_add_ai_interest(GAME_ROOT_DO_ID, LOGIN_SERVICE_ZONE, false);
 
 ir_create_do("GameRoot", GAME_ROOT_DO_ID, 0, 0, true);
 
-//ir_create_do_db("World", GAME_ROOT_DO_ID, WORLD_ZONE, true);
+ir_create_do_db("World", GAME_ROOT_DO_ID, WORLD_ZONE, true);
 
 ir_create_do_db("LoginService", GAME_ROOT_DO_ID, LOGIN_SERVICE_ZONE, true);
 
-//ir_create_do_db("AIServer", GAME_ROOT_DO_ID, AI_SERVICES_ZONE, true);
+ir_create_do_db("AIServer", GAME_ROOT_DO_ID, AI_SERVICES_ZONE, true);
 

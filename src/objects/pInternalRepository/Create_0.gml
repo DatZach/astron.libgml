@@ -1,8 +1,8 @@
 event_inherited();
 
-stateServer = 400000;
-dbss = 400001;
-aiChannel = 500000;
+stateServer = CHANNEL_STATESERVER;
+dbss = CHANNEL_DBSS;
+aiChannel = CHANNEL_AI;
 
 interests = ds_list_create();
 doiDoidToLocation = ds_map_create();
