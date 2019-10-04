@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "00618933-0a49-46c5-9a83-37d56f949249",
+            "Value": {
+                "id": "371947d8-6f38-4735-a665-62e874e4688d",
+                "resourcePath": "scripts\\dc_field_has_keyword\\dc_field_has_keyword.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "00dbd4cd-a283-4fbe-a55f-230b6bded9a4",
             "Value": {
                 "id": "3a139b50-e865-4763-ad1e-f2c54b205178",
@@ -1996,6 +2004,7 @@
         "021547b8-f03c-4289-b5e6-695453b98086",
         "2ca8fa9c-cc54-416d-9e73-cfde548f7438",
         "c40a2eed-f233-424c-adeb-fb78a96ef296",
+        "00618933-0a49-46c5-9a83-37d56f949249",
         "30fed3c1-1e62-49db-bd5f-1c2e36a5c014",
         "14a1bfb7-af91-4e5a-adea-2ed46ccd851f",
         "c8bfc070-13c6-4cab-8c8a-600b848f9294",
